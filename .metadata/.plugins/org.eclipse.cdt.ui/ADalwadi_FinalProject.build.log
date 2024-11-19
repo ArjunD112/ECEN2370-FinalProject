@@ -1,10 +1,81 @@
-13:49:17 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+14:18:14 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-   text	   data	    bss	    dec	    hex	filename
-  18668	     28	 155484	 174180	  2a864	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
+arm-none-eabi-gcc "../Core/Src/Timer_Driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Timer_Driver.d" -MT"Core/Src/Timer_Driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Timer_Driver.o"
+In file included from ../Core/Src/Timer_Driver.c:9:
+../Core/Inc/Timer_Driver.h:66:16: error: unknown type name 'GPTIMR_RegDef_t'
+   66 | void TimerInit(GPTIMR_RegDef_t *timer, GPTimer_Config_t config);
+      |                ^~~~~~~~~~~~~~~
+../Core/Inc/Timer_Driver.h:67:25: error: unknown type name 'GPTIMR_RegDef_t'
+   67 | void Timer_ClockControl(GPTIMR_RegDef_t *timer, bool state);
+      |                         ^~~~~~~~~~~~~~~
+../Core/Inc/Timer_Driver.h:68:17: error: unknown type name 'GPTIMR_RegDef_t'
+   68 | void StartTimer(GPTIMR_RegDef_t *timer);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Inc/Timer_Driver.h:69:16: error: unknown type name 'GPTIMR_RegDef_t'
+   69 | void StopTimer(GPTIMR_RegDef_t *timer);
+      |                ^~~~~~~~~~~~~~~
+../Core/Inc/Timer_Driver.h:70:17: error: unknown type name 'GPTIMR_RegDef_t'
+   70 | void ResetTimer(GPTIMR_RegDef_t *timer);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Inc/Timer_Driver.h:71:24: error: unknown type name 'GPTIMR_RegDef_t'
+   71 | uint32_t GetTimerValue(GPTIMR_RegDef_t *timer);
+      |                        ^~~~~~~~~~~~~~~
+../Core/Inc/Timer_Driver.h:72:29: error: unknown type name 'GPTIMR_RegDef_t'
+   72 | void Timer_InterruptControl(GPTIMR_RegDef_t *timer, bool state);
+      |                             ^~~~~~~~~~~~~~~
+../Core/Inc/Timer_Driver.h:73:22: error: unknown type name 'GPTIMR_RegDef_t'
+   73 | uint32_t GetTimerARV(GPTIMR_RegDef_t *timer);
+      |                      ^~~~~~~~~~~~~~~
+../Core/Inc/Timer_Driver.h:74:31: error: unknown type name 'GPTIMR_RegDef_t'
+   74 | void Timer_ClearInterruptFlag(GPTIMR_RegDef_t *timer);
+      |                               ^~~~~~~~~~~~~~~
+../Core/Inc/Timer_Driver.h:75:31: error: unknown type name 'GPTIMR_RegDef_t'
+   75 | void Timer_EnableInterruptBit(GPTIMR_RegDef_t *timer);
+      |                               ^~~~~~~~~~~~~~~
+../Core/Inc/Timer_Driver.h:76:19: error: unknown type name 'GPTIMR_RegDef_t'
+   76 | bool TimerStopped(GPTIMR_RegDef_t *timer);
+      |                   ^~~~~~~~~~~~~~~
+../Core/Inc/Timer_Driver.h:77:23: error: unknown type name 'GPTIMR_RegDef_t'
+   77 | void ForceTimerUpdate(GPTIMR_RegDef_t *timer);
+      |                       ^~~~~~~~~~~~~~~
+../Core/Src/Timer_Driver.c:12:17: error: unknown type name 'GPTIMR_RegDef_t'
+   12 | void StartTimer(GPTIMR_RegDef_t *timer){ timer -> CR1 |= (ENABLE << CEN_BITSHIFT); }
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/Timer_Driver.c:14:16: error: unknown type name 'GPTIMR_RegDef_t'
+   14 | void StopTimer(GPTIMR_RegDef_t *timer){ timer -> CR1 &= ~(ENABLE << CEN_BITSHIFT); }
+      |                ^~~~~~~~~~~~~~~
+../Core/Src/Timer_Driver.c:16:17: error: unknown type name 'GPTIMR_RegDef_t'
+   16 | void ResetTimer(GPTIMR_RegDef_t *timer){ timer -> CNT = RESET; }
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/Timer_Driver.c:18:23: error: unknown type name 'GPTIMR_RegDef_t'
+   18 | void ForceTimerUpdate(GPTIMR_RegDef_t *timer){ timer -> EGR |= (SET << UG_BITSHIFT); }
+      |                       ^~~~~~~~~~~~~~~
+../Core/Src/Timer_Driver.c:20:22: error: unknown type name 'GPTIMR_RegDef_t'
+   20 | uint32_t GetTimerARV(GPTIMR_RegDef_t *timer){ return (timer -> ARR); }
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/Timer_Driver.c:22:33: error: unknown type name 'GPTIMR_RegDef_t'
+   22 | volatile uint32_t GetTimerValue(GPTIMR_RegDef_t *timer){ return (timer -> CNT); }
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/Timer_Driver.c:25:31: error: unknown type name 'GPTIMR_RegDef_t'
+   25 | void Timer_ClearInterruptFlag(GPTIMR_RegDef_t *timer){ timer -> SR &= ~(SET); }
+      |                               ^~~~~~~~~~~~~~~
+../Core/Src/Timer_Driver.c:28:29: error: unknown type name 'GPTIMR_RegDef_t'
+   28 | void Timer_InterruptControl(GPTIMR_RegDef_t *timer, bool state){
+      |                             ^~~~~~~~~~~~~~~
+../Core/Src/Timer_Driver.c:46:31: error: unknown type name 'GPTIMR_RegDef_t'
+   46 | void Timer_EnableInterruptBit(GPTIMR_RegDef_t *timer){
+      |                               ^~~~~~~~~~~~~~~
+../Core/Src/Timer_Driver.c:57:25: error: unknown type name 'GPTIMR_RegDef_t'
+   57 | void Timer_ClockControl(GPTIMR_RegDef_t *timer, bool state){
+      |                         ^~~~~~~~~~~~~~~
+../Core/Src/Timer_Driver.c:75:19: error: unknown type name 'GPTIMR_RegDef_t'
+   75 | bool TimerStopped(GPTIMR_RegDef_t *timer){
+      |                   ^~~~~~~~~~~~~~~
+../Core/Src/Timer_Driver.c:83:16: error: unknown type name 'GPTIMR_RegDef_t'
+   83 | void TimerInit(GPTIMR_RegDef_t *timer, GPTimer_Config_t config){
+      |                ^~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:55: Core/Src/Timer_Driver.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
 
-13:49:17 Build Finished. 0 errors, 0 warnings. (took 429ms)
+14:18:16 Build Failed. 25 errors, 0 warnings. (took 1s.779ms)
 
