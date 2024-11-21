@@ -36,7 +36,7 @@ int main(void)
   HAL_Init();
 
   // The default system configuration function is "suspect" so we need to make our own clock configuration
-  // Note - You, the developer, MAY have to play with some of this coniguration as you progress in your project
+  // Note - You, the developer, MAY have to play with some of this configuration as you progress in your project
   SystemClockOverride();
 
   ApplicationInit(); // Initializes the LCD functionality

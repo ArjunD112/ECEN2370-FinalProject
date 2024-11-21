@@ -29,25 +29,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  12 .ARM.attributes 00000030  00000000  00000000  0000601c  2**0
                   CONTENTS, READONLY
- 13 .debug_info   000095d4  00000000  00000000  0000604c  2**0
+ 13 .debug_info   00009952  00000000  00000000  0000604c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00001e91  00000000  00000000  0000f620  2**0
+ 14 .debug_abbrev 00001ea8  00000000  00000000  0000f99e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 000009e0  00000000  00000000  000114b8  2**3
+ 15 .debug_aranges 000009f0  00000000  00000000  00011848  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 00000748  00000000  00000000  00011e98  2**0
+ 16 .debug_rnglists 00000754  00000000  00000000  00012238  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  000251af  00000000  00000000  000125e0  2**0
+ 17 .debug_macro  00025c07  00000000  00000000  0001298c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000c40e  00000000  00000000  0003778f  2**0
+ 18 .debug_line   0000c6f4  00000000  00000000  00038593  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000d918d  00000000  00000000  00043b9d  2**0
+ 19 .debug_str    000e0533  00000000  00000000  00044c87  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000043  00000000  00000000  0011cd2a  2**0
+ 20 .comment      00000043  00000000  00000000  001251ba  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00002690  00000000  00000000  0011cd70  2**2
+ 21 .debug_frame  000026e0  00000000  00000000  00125200  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 0000009e  00000000  00000000  0011f400  2**0
+ 22 .debug_line_str 0000009e  00000000  00000000  001278e0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -2349,7 +2349,7 @@ int main(void)
  80011a2:	f000 fa7b 	bl	800169c <HAL_Init>
 
   // The default system configuration function is "suspect" so we need to make our own clock configuration
-  // Note - You, the developer, MAY have to play with some of this coniguration as you progress in your project
+  // Note - You, the developer, MAY have to play with some of this configuration as you progress in your project
   SystemClockOverride();
  80011a6:	f000 f80b 	bl	80011c0 <SystemClockOverride>
 
