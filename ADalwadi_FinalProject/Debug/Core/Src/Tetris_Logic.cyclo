@@ -1,6 +1,0 @@
-../Core/Src/Tetris_Logic.c:12:12:BuildTetrominoe	22
-../Core/Src/Tetris_Logic.c:192:12:RotateTetrominoe	19
-../Core/Src/Tetris_Logic.c:308:12:ShiftTetrominoe	15
-../Core/Src/Tetris_Logic.c:399:6:DrawBoard	5
-../Core/Src/Tetris_Logic.c:435:6:DrawBlock	2
-../Core/Src/Tetris_Logic.c:451:6:DrawTetrominoe	4

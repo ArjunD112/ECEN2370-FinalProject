@@ -1,6 +1,0 @@
-../Core/Src/Tetris_Logic.c:12:12:BuildTetrominoe	216	static
-../Core/Src/Tetris_Logic.c:192:12:RotateTetrominoe	160	static
-../Core/Src/Tetris_Logic.c:308:12:ShiftTetrominoe	88	static
-../Core/Src/Tetris_Logic.c:399:6:DrawBoard	16	static
-../Core/Src/Tetris_Logic.c:435:6:DrawBlock	24	static
-../Core/Src/Tetris_Logic.c:451:6:DrawTetrominoe	24	static
