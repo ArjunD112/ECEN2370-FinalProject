@@ -43,7 +43,9 @@ void ApplicationInit(void)
 
 void LCD_Visual_Demo(void)
 {
-	visualDemo();
+//	visualDemo();
+	DrawBoard();
+
 }
 
 #if COMPILE_TOUCH_FUNCTIONS == 1
