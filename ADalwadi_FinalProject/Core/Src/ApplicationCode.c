@@ -8,6 +8,7 @@
 #include "ApplicationCode.h"
 
 /* Static variables */
+static Tetrominoe tetrominoe = {0};
 
 
 extern void initialise_monitor_handles(void); 
@@ -25,7 +26,10 @@ void ApplicationInit(void)
 	initialise_monitor_handles(); // Allows printf functionality
     LTCD__Init();
     LTCD_Layer_Init(0);
-    LCD_Clear(0,LCD_COLOR_WHITE);
+    LCD_Clear(0,LCD_COLOR_BLACK);
+
+    Button_Init_InterruptMode();
+
 
     #if COMPILE_TOUCH_FUNCTIONS == 1
 	InitializeLCDTouch();
@@ -43,7 +47,13 @@ void ApplicationInit(void)
 
 void LCD_Visual_Demo(void)
 {
-	visualDemo();
+//	visualDemo();
+	DrawBoard();
+
+	tetrominoe = BuildTetrominoe(Z);
+
+	tetrominoe = RotateTetrominoe(tetrominoe);
+
 }
 
 #if COMPILE_TOUCH_FUNCTIONS == 1
@@ -152,4 +162,17 @@ void EXTI15_10_IRQHandler()
 }
 #endif // TOUCH_INTERRUPT_ENABLED
 #endif // COMPILE_TOUCH_FUNCTIONS
+
+
+void EXTI0_IRQHandler(){
+
+	HAL_NVIC_DisableIRQ(EXTI0_IRQn);
+
+	tetrominoe = ShiftTetrominoe(tetrominoe, DOWN);
+
+	HAL_EXTI_ClearPending(EXTI_GPIOA, EXTI_TRIGGER_RISING);
+
+	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
+}
 

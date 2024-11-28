@@ -1,17 +1,10 @@
-14:14:07 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+15:55:51 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Timer_Driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Timer_Driver.d" -MT"Core/Src/Timer_Driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Timer_Driver.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  18668	     28	 155484	 174180	  2a864	ADalwadi_FinalProject.elf
+  17168	     16	 155504	 172688	  2a290	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
-Finished building: ADalwadi_FinalProject.list
- 
 
-14:14:10 Build Finished. 0 errors, 0 warnings. (took 2s.310ms)
+15:55:52 Build Finished. 0 errors, 0 warnings. (took 793ms)
 
