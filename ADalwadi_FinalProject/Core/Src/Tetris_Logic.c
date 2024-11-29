@@ -128,7 +128,7 @@ Tetrominoe BuildTetrominoe(uint8_t c){
 
 
 				tetrominoe.Name = J;
-				tetrominoe.Color = LCD_COLOR_BLUE;
+				tetrominoe.Color = LCD_COLOR_ORANGE;
 				tetrominoe.Width = 2;
 				tetrominoe.Height = 3;
 
@@ -229,7 +229,7 @@ Tetrominoe RotateTetrominoe(Tetrominoe oldTetrominoe){
 
 	}
 
-	else if(oldTetrominoe.XPosition - oldTetrominoe.Height < BOARD_W_MIN){
+	else if(oldTetrominoe.XPosition - oldTetrominoe.Height < BOARD_W_MIN - X){
 
 		newTetrominoe.XPosition = U;
 
@@ -523,3 +523,181 @@ void DrawTetrominoe(Tetrominoe tetrominoe, uint16_t color){
 //	}
 //
 //}
+
+
+void DrawStartScreen(){
+
+	DrawBoard();
+
+	Tetrominoe t = {0};
+
+	t = BuildTetrominoe(L);
+
+	HAL_Delay(100);
+
+	for(int i = 0; i < 4; i++){
+		t = ShiftTetrominoe(t, LEFT);
+		t = ShiftTetrominoe(t, DOWN);
+
+		HAL_Delay(100);
+	}
+
+	for(int i = 0; i < 5; i++){
+		t = ShiftTetrominoe(t, DOWN);
+
+		HAL_Delay(100);
+	}
+
+	t = BuildTetrominoe(I);
+
+	HAL_Delay(100);
+
+	t = RotateTetrominoe(t);
+
+	HAL_Delay(100);
+
+	for(int i = 0; i < 6; i++){
+		t = ShiftTetrominoe(t, RIGHT);
+		t = ShiftTetrominoe(t, DOWN);
+
+		HAL_Delay(100);
+	}
+
+	for(int i = 0; i < 2; i++){
+		t = ShiftTetrominoe(t, DOWN);
+
+		HAL_Delay(100);
+	}
+
+	t = BuildTetrominoe(Z);
+
+	for(int i = 0; i < 2; i++){
+		t = ShiftTetrominoe(t, DOWN);
+		t = ShiftTetrominoe(t, LEFT);
+
+		HAL_Delay(100);
+	}
+
+	for(int i = 0; i < 8; i++){
+		t = ShiftTetrominoe(t, DOWN);
+
+		HAL_Delay(100);
+	}
+
+	t = BuildTetrominoe(J);
+
+	for(int i = 0; i < 4; i++){
+		t = ShiftTetrominoe(t, DOWN);
+		t = ShiftTetrominoe(t, RIGHT);
+
+		HAL_Delay(100);
+	}
+
+	for(int i = 0; i < 5; i++){
+		t = ShiftTetrominoe(t, DOWN);
+
+		HAL_Delay(100);
+	}
+
+	t = BuildTetrominoe(S);
+
+	HAL_Delay(100);
+
+	t = ShiftTetrominoe(t, LEFT);
+
+	HAL_Delay(100);
+
+	for(int i = 0; i < 3; i++){
+		t = ShiftTetrominoe(t, DOWN);
+		t = RotateTetrominoe(t);
+
+		HAL_Delay(100);
+	}
+
+	for(int i = 0; i < 5; i++){
+		t = ShiftTetrominoe(t, DOWN);
+
+		HAL_Delay(100);
+	}
+
+	t = BuildTetrominoe(O);
+
+	HAL_Delay(100);
+
+	t = ShiftTetrominoe(t, RIGHT);
+
+	HAL_Delay(100);
+
+	for(int i = 0; i < 10; i++){
+		t = ShiftTetrominoe(t, DOWN);
+
+		HAL_Delay(100);
+	}
+
+	t = BuildTetrominoe(T);
+
+	HAL_Delay(100);
+
+	t = ShiftTetrominoe(t, DOWN);
+
+	HAL_Delay(100);
+
+	for(int i = 0; i < 2; i++){
+		t = ShiftTetrominoe(t, RIGHT);
+
+
+		HAL_Delay(100);
+	}
+
+	for(int i = 0; i < 5; i++){
+		t = RotateTetrominoe(t);
+
+		HAL_Delay(100);
+	}
+
+	for(int i = 0; i < 8; i++){
+		t = ShiftTetrominoe(t, DOWN);
+
+		HAL_Delay(100);
+	}
+
+
+
+	for(int i = 29; i < 212; i++){
+		LCD_Draw_Vertical_Line(i, 63, 137, LCD_COLOR_MAGENTA);
+	}
+
+	for(int i = 51; i < 190; i++){
+		LCD_Draw_Vertical_Line(i, 85, 93, LCD_COLOR_BLACK);
+	}
+
+	LCD_SetTextColor(LCD_COLOR_WHITE);
+	LCD_SetFont(&Font16x24);
+
+	LCD_DisplayChar(80, 100, 'T');
+	LCD_DisplayChar(95, 100, 'E');
+	LCD_DisplayChar(110, 100, 'T');
+	LCD_DisplayChar(125, 100, 'R');
+	LCD_DisplayChar(135, 100, 'I');
+	LCD_DisplayChar(145, 100, 'S');
+
+
+	LCD_SetTextColor(LCD_COLOR_WHITE);
+	LCD_SetFont(&Font12x12);
+
+	LCD_DisplayChar(70, 150, 'T');
+	LCD_DisplayChar(80, 150, 'a');
+	LCD_DisplayChar(90, 150, 'p');
+
+	LCD_DisplayChar(110, 150, 'T');
+	LCD_DisplayChar(120, 150, 'o');
+
+	LCD_DisplayChar(140, 150, 'P');
+	LCD_DisplayChar(150, 150, 'l');
+	LCD_DisplayChar(155, 150, 'a');
+	LCD_DisplayChar(165, 150, 'y');
+
+
+
+
+}

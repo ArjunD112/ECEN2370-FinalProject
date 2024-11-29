@@ -17,6 +17,9 @@ void Timer6Init(){
 
 	__HAL_RCC_TIM6_CLK_ENABLE();
 
+	//HAL code below
+	TIM_MasterConfigTypeDef sMasterConfig = {0};
+
 	htim6.Instance = TIM6;
 	htim6.Init.Prescaler = PSC_VAL;
 	htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
@@ -24,6 +27,11 @@ void Timer6Init(){
 	htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
 
 	HAL_TIM_Base_Init(&htim6);
+
+	sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+	sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+
+	HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig);
 
 }
 

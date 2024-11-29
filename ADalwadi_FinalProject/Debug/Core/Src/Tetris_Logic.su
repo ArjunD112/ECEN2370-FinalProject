@@ -4,3 +4,4 @@
 ../Core/Src/Tetris_Logic.c:437:6:DrawBoard	16	static
 ../Core/Src/Tetris_Logic.c:473:6:DrawBlock	24	static
 ../Core/Src/Tetris_Logic.c:489:6:DrawTetrominoe	24	static
+../Core/Src/Tetris_Logic.c:528:6:DrawStartScreen	168	static

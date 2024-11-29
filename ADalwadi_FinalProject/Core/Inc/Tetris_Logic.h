@@ -31,7 +31,7 @@
 #define OBLOCK_MW 2
 
 #define START_POSITION_X 3
-#define START_POSITION_Y 5
+#define START_POSITION_Y 0
 
 #define BOARD_WIDTH  10
 #define BOARD_LENGTH 12
@@ -87,6 +87,7 @@ void DrawBoard();
 void DrawBlock(uint16_t x, uint16_t y, uint16_t color);
 void DrawTetrominoe(Tetrominoe tetrominoe, uint16_t color);
 bool checkSet(Tetrominoe tetrominoe);
+void DrawStartScreen();
 
 
 

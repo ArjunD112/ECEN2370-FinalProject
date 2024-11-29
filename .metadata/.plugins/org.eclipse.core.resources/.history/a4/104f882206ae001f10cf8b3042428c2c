@@ -1,0 +1,30 @@
+/*
+ * InterruptControl.h
+ *
+ *  Created on: Sep 24, 2024
+ *      Author: Arjun
+ */
+
+#ifndef INTERRUPTCONTROL_H_
+#define INTERRUPTCONTROL_H_
+
+
+#include "STM32F429i.h"
+
+
+#define EXTI0_IRQ_NUMBER 6
+
+#define TIM2_IRQ_NUM 28
+#define TIM5_IRQ_NUM 50
+
+
+
+void IRQ_EnableInterrupt(uint8_t irq);
+void IRQ_DisableInterrupt(uint8_t irq);
+void IRQ_ClearPendingInterrupt(uint8_t irq);
+void IRQ_SetPendingInterrupt(uint8_t irq);
+void EXTI_ClearPendingInterruptBit(uint8_t pin);
+
+
+
+#endif /* INTERRUPTCONTROL_H_ */
