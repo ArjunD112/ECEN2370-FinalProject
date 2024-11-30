@@ -51,17 +51,15 @@ void ApplicationInit(void)
 void LCD_Visual_Demo(void)
 {
 //	visualDemo();
-//	DrawBoard();
 
-	board = InitBoard();
+//	board = InitBoard();
 
-	DrawStartScreen(board);
+//	DrawStartScreen(board);
 
+//	tetrominoe = BuildTetrominoe(T, board);
 
+	DrawEndScreen();
 
-//	tetrominoe = BuildTetrominoe(T);
-//
-//	DrawTetrominoe(tetrominoe, tetrominoe.Color);
 
 }
 
@@ -177,7 +175,19 @@ void EXTI0_IRQHandler(){
 
 	HAL_NVIC_DisableIRQ(EXTI0_IRQn);
 
-	tetrominoe = RotateTetrominoe(tetrominoe);
+	if(CheckCollision(tetrominoe, board)){
+
+		board = SetTetrominoe(tetrominoe, board);
+
+		tetrominoe = BuildTetrominoe(L, board);
+
+	}
+
+	else{
+
+		tetrominoe = ShiftTetrominoe(tetrominoe, DOWN);
+
+	}
 
 	HAL_EXTI_ClearPending(EXTI_GPIOA, EXTI_TRIGGER_RISING);
 
