@@ -209,7 +209,7 @@ Tetrominoe BuildTetrominoe(uint8_t c, Board b){
 }
 
 
-Tetrominoe RotateTetrominoe(Tetrominoe oldTetrominoe){
+Tetrominoe RotateTetrominoe(Tetrominoe oldTetrominoe, Board b){
 
 
 	if(oldTetrominoe.Name == O){
@@ -238,7 +238,7 @@ Tetrominoe RotateTetrominoe(Tetrominoe oldTetrominoe){
 
 	}
 
-	else if(oldTetrominoe.XPosition - oldTetrominoe.Height < BOARD_W_MIN - X){
+	else if(oldTetrominoe.XPosition - oldTetrominoe.Height < BOARD_W_MIN - 2){
 
 		newTetrominoe.XPosition = U;
 
@@ -322,15 +322,25 @@ Tetrominoe RotateTetrominoe(Tetrominoe oldTetrominoe){
 	}
 
 
-	DrawTetrominoe(newTetrominoe, newTetrominoe.Color);
 
+	if(CheckOverlap(newTetrominoe, b)){
 
-	return newTetrominoe;
+		DrawTetrominoe(oldTetrominoe, oldTetrominoe.Color);
+		return oldTetrominoe;
+
+	}
+
+	else {
+
+		DrawTetrominoe(newTetrominoe, newTetrominoe.Color);
+		return newTetrominoe;
+
+	}
 
 }
 
 
-Tetrominoe ShiftTetrominoe(Tetrominoe oldTetrominoe, uint8_t dir){
+Tetrominoe ShiftTetrominoe(Tetrominoe oldTetrominoe, Board b, uint8_t dir){
 
 
 	DrawTetrominoe(oldTetrominoe, LCD_COLOR_BLACK);
@@ -437,10 +447,19 @@ Tetrominoe ShiftTetrominoe(Tetrominoe oldTetrominoe, uint8_t dir){
 	}
 
 
-	DrawTetrominoe(newTetrominoe, newTetrominoe.Color);
+	if(CheckOverlap(newTetrominoe, b)){
 
+		DrawTetrominoe(oldTetrominoe, oldTetrominoe.Color);
+		return oldTetrominoe;
 
-	return newTetrominoe;
+	}
+
+	else {
+
+		DrawTetrominoe(newTetrominoe, newTetrominoe.Color);
+		return newTetrominoe;
+
+	}
 
 }
 
@@ -592,14 +611,14 @@ void DrawStartScreen(Board b){
 	HAL_Delay(100);
 
 	for(int i = 0; i < 4; i++){
-		t = ShiftTetrominoe(t, LEFT);
-		t = ShiftTetrominoe(t, DOWN);
+		t = ShiftTetrominoe(t, b, LEFT);
+		t = ShiftTetrominoe(t, b, DOWN);
 
 		HAL_Delay(100);
 	}
 
 	for(int i = 0; i < 5; i++){
-		t = ShiftTetrominoe(t, DOWN);
+		t = ShiftTetrominoe(t, b, DOWN);
 
 		HAL_Delay(100);
 	}
@@ -608,19 +627,19 @@ void DrawStartScreen(Board b){
 
 	HAL_Delay(100);
 
-	t = RotateTetrominoe(t);
+	t = RotateTetrominoe(t, b);
 
 	HAL_Delay(100);
 
 	for(int i = 0; i < 6; i++){
-		t = ShiftTetrominoe(t, RIGHT);
-		t = ShiftTetrominoe(t, DOWN);
+		t = ShiftTetrominoe(t, b, RIGHT);
+		t = ShiftTetrominoe(t, b, DOWN);
 
 		HAL_Delay(100);
 	}
 
 	for(int i = 0; i < 2; i++){
-		t = ShiftTetrominoe(t, DOWN);
+		t = ShiftTetrominoe(t, b, DOWN);
 
 		HAL_Delay(100);
 	}
@@ -628,14 +647,14 @@ void DrawStartScreen(Board b){
 	t = BuildTetrominoe(Z, b);
 
 	for(int i = 0; i < 2; i++){
-		t = ShiftTetrominoe(t, DOWN);
-		t = ShiftTetrominoe(t, LEFT);
+		t = ShiftTetrominoe(t, b, DOWN);
+		t = ShiftTetrominoe(t, b, LEFT);
 
 		HAL_Delay(100);
 	}
 
 	for(int i = 0; i < 8; i++){
-		t = ShiftTetrominoe(t, DOWN);
+		t = ShiftTetrominoe(t, b, DOWN);
 
 		HAL_Delay(100);
 	}
@@ -643,14 +662,14 @@ void DrawStartScreen(Board b){
 	t = BuildTetrominoe(J, b);
 
 	for(int i = 0; i < 4; i++){
-		t = ShiftTetrominoe(t, DOWN);
-		t = ShiftTetrominoe(t, RIGHT);
+		t = ShiftTetrominoe(t, b, DOWN);
+		t = ShiftTetrominoe(t, b, RIGHT);
 
 		HAL_Delay(100);
 	}
 
 	for(int i = 0; i < 5; i++){
-		t = ShiftTetrominoe(t, DOWN);
+		t = ShiftTetrominoe(t, b, DOWN);
 
 		HAL_Delay(100);
 	}
@@ -659,19 +678,19 @@ void DrawStartScreen(Board b){
 
 	HAL_Delay(100);
 
-	t = ShiftTetrominoe(t, LEFT);
+	t = ShiftTetrominoe(t, b, LEFT);
 
 	HAL_Delay(100);
 
 	for(int i = 0; i < 3; i++){
-		t = ShiftTetrominoe(t, DOWN);
-		t = RotateTetrominoe(t);
+		t = ShiftTetrominoe(t, b, DOWN);
+		t = RotateTetrominoe(t, b);
 
 		HAL_Delay(100);
 	}
 
 	for(int i = 0; i < 5; i++){
-		t = ShiftTetrominoe(t, DOWN);
+		t = ShiftTetrominoe(t, b, DOWN);
 
 		HAL_Delay(100);
 	}
@@ -680,12 +699,12 @@ void DrawStartScreen(Board b){
 
 	HAL_Delay(100);
 
-	t = ShiftTetrominoe(t, RIGHT);
+	t = ShiftTetrominoe(t, b, RIGHT);
 
 	HAL_Delay(100);
 
 	for(int i = 0; i < 10; i++){
-		t = ShiftTetrominoe(t, DOWN);
+		t = ShiftTetrominoe(t, b, DOWN);
 
 		HAL_Delay(100);
 	}
@@ -694,25 +713,25 @@ void DrawStartScreen(Board b){
 
 	HAL_Delay(100);
 
-	t = ShiftTetrominoe(t, DOWN);
+	t = ShiftTetrominoe(t, b, DOWN);
 
 	HAL_Delay(100);
 
 	for(int i = 0; i < 2; i++){
-		t = ShiftTetrominoe(t, RIGHT);
+		t = ShiftTetrominoe(t, b, RIGHT);
 
 
 		HAL_Delay(100);
 	}
 
 	for(int i = 0; i < 5; i++){
-		t = RotateTetrominoe(t);
+		t = RotateTetrominoe(t, b);
 
 		HAL_Delay(100);
 	}
 
 	for(int i = 0; i < 8; i++){
-		t = ShiftTetrominoe(t, DOWN);
+		t = ShiftTetrominoe(t, b, DOWN);
 
 		HAL_Delay(100);
 	}
@@ -758,22 +777,22 @@ void DrawStartScreen(Board b){
 
 Board InitBoard(){
 
-	Board new = {U};
+	Board newBoard = {U};
 
 	for(int i = 0; i <= BOARD_LENGTH + 1; i++){
-		new.Field[i][0] = K;
-		new.Field[i][BOARD_WIDTH + 1] = K;
+		newBoard.Field[i][0] = K;
+		newBoard.Field[i][BOARD_WIDTH + 1] = K;
 	}
 
 	for(int i = 1; i <= BOARD_WIDTH; i++){
-		new.Field[0][i] = K;
-		new.Field[BOARD_LENGTH + 1][i] = K;
+		newBoard.Field[0][i] = K;
+		newBoard.Field[BOARD_LENGTH + 1][i] = K;
 	}
 
 
-	DrawBoard(new);
+	DrawBoard(newBoard);
 
-	return new;
+	return newBoard;
 
 }
 
@@ -795,6 +814,8 @@ Board SetTetrominoe(Tetrominoe t, Board b){
 
 	DrawBoard(b);
 
+	b = CheckTetris(b);
+
 	return b;
 
 }
@@ -805,7 +826,7 @@ bool CheckValidSpawn(Tetrominoe t, Board b){
 	int8_t x = t.XPosition + 1;
 	int8_t y = t.YPosition + 1;
 
-	int8_t bottom = y + t.Height;
+	int8_t bottom = y + t.Height - 1;
 
 	for(int i = 0; i < 4; i++){
 
@@ -838,3 +859,89 @@ void DrawEndScreen(){
 	LCD_DisplayChar(136, 120, 'R');
 
 }
+
+
+bool CheckOverlap(Tetrominoe t, Board b){
+
+	int8_t x = t.XPosition + 1;
+	int8_t y = t.YPosition + 1;
+
+	for(int i = 0; i < 4; i++){
+		for(int j = 0; j < 4; j++){
+
+			if(t.Structure[i][j] == X && b.Field[y + i][x + j] != U){
+				return true;
+			}
+
+		}
+	}
+
+	return false;
+
+}
+
+
+bool CheckRow(Board b, int8_t r){
+
+	for(int i = X; i <= BOARD_WIDTH; i++){
+
+		if(b.Field[r][i] == U){
+			return false;
+		}
+
+	}
+
+	return true;
+
+}
+
+
+Board CheckTetris(Board b){
+
+	int8_t bottomRow = U;
+	int8_t topRow = BOARD_LENGTH + X;
+
+	for(int r = BOARD_LENGTH; r > 0; r--){
+
+		if(CheckRow(b, r) && r < topRow){
+
+			topRow = r;
+
+		}
+
+	}
+
+
+	for(int r = topRow; r <= BOARD_LENGTH; r++){
+
+		if(CheckRow(b, r) && r > bottomRow){
+
+			bottomRow = r;
+
+		}
+
+	}
+
+
+	if(bottomRow != U && topRow != BOARD_LENGTH + X){
+
+		uint8_t numLevels = bottomRow - topRow + X;
+
+		for(int i = bottomRow; i > U + numLevels; i--){
+			for(int j = X; j <= BOARD_WIDTH; j++){
+
+				b.Field[i][j] = b.Field[i - numLevels][j];
+				b.Field[i - numLevels][j] = U;
+
+			}
+		}
+
+
+		DrawBoard(b);
+
+	}
+
+	return b;
+
+}
+
