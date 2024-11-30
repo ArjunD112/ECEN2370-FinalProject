@@ -361,6 +361,7 @@ Tetrominoe ShiftTetrominoe(Tetrominoe oldTetrominoe, uint8_t dir){
 		}
 
 		else if(oldTetrominoe.YPosition <= BOARD_L_MAX - oldTetrominoe.Height){
+
 			newTetrominoe.YPosition = oldTetrominoe.YPosition + X;
 		}
 
@@ -434,7 +435,7 @@ Tetrominoe ShiftTetrominoe(Tetrominoe oldTetrominoe, uint8_t dir){
 }
 
 
-void DrawBoard(){
+void DrawBoard(Board b){
 
 	LCD_Clear(0, LCD_COLOR_BLACK);
 
@@ -465,6 +466,46 @@ void DrawBoard(){
 
 		LCD_Draw_Horizontal_Line(U, j, LCD_PIXEL_WIDTH, LCD_COLOR_WHITE);
 
+	}
+
+
+
+	for(int k = 1; k <= BOARD_LENGTH + 1; k++){
+		for(int l = 0; l <= BOARD_WIDTH + 1; l++){
+
+			switch(b.Field[k][l]){
+
+			case O:
+				DrawBlock(l-1, k-1, LCD_COLOR_YELLOW);
+				break;
+
+			case I:
+				DrawBlock(l-1, k-1, LCD_COLOR_CYAN);
+				break;
+
+			case S:
+				DrawBlock(l-1, k-1, LCD_COLOR_GREEN);
+				break;
+
+			case Z:
+				DrawBlock(l-1, k-1, LCD_COLOR_RED);
+				break;
+
+			case J:
+				DrawBlock(l-1, k-1, LCD_COLOR_ORANGE);
+				break;
+
+			case L:
+				DrawBlock(l-1, k-1, LCD_COLOR_MAGENTA);
+				break;
+
+			case T:
+				DrawBlock(l-1, k-1, LCD_COLOR_BLUE2);
+				break;
+
+
+			}
+		}
 	}
 
 }
@@ -525,9 +566,9 @@ void DrawTetrominoe(Tetrominoe tetrominoe, uint16_t color){
 //}
 
 
-void DrawStartScreen(){
+void DrawStartScreen(Board b){
 
-	DrawBoard();
+	DrawBoard(b);
 
 	Tetrominoe t = {0};
 
@@ -697,7 +738,70 @@ void DrawStartScreen(){
 	LCD_DisplayChar(155, 150, 'a');
 	LCD_DisplayChar(165, 150, 'y');
 
+}
 
 
+Board InitBoard(){
+
+	Board new = {U};
+
+	for(int i = 0; i <= BOARD_LENGTH + 1; i++){
+		new.Field[i][0] = K;
+		new.Field[i][BOARD_WIDTH + 1] = K;
+	}
+
+	for(int i = 1; i <= BOARD_WIDTH; i++){
+		new.Field[0][i] = K;
+		new.Field[BOARD_LENGTH + 1][i] = K;
+	}
+
+
+	DrawBoard(new);
+
+	return new;
+
+}
+
+
+//Board UpdateBoard(Tetrominoe t, Board b){
+//
+//	int8_t x = t.XPosition;
+//	int8_t y = t.YPosition;
+//
+//	for(int i = 0; i < 4; i++){
+//		for(int j = 0; j < 4; j++){
+//
+//			if(t.Structure[i][j] == X){
+//				b.Field[x + i][y + j] = t.Name;
+//			}
+//
+//		}
+//	}
+//
+//	DrawBoard(b);
+//
+//	return b;
+//
+//}
+
+
+Board SetTetrominoe(Tetrominoe t, Board b){
+
+	int8_t x = t.XPosition;
+	int8_t y = t.YPosition;
+
+	for(int i = 0; i < 4; i++){
+		for(int j = 0; j < 4; j++){
+
+			if(t.Structure[i][j] == X){
+				b.Field[x + i][y + j] = t.Name;
+			}
+
+		}
+	}
+
+	DrawBoard(b);
+
+	return b;
 
 }

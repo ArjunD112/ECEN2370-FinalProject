@@ -1,7 +1,9 @@
 ../Core/Src/Tetris_Logic.c:12:12:BuildTetrominoe	240	static
 ../Core/Src/Tetris_Logic.c:203:12:RotateTetrominoe	168	static
 ../Core/Src/Tetris_Logic.c:324:12:ShiftTetrominoe	104	static
-../Core/Src/Tetris_Logic.c:437:6:DrawBoard	16	static
-../Core/Src/Tetris_Logic.c:473:6:DrawBlock	24	static
-../Core/Src/Tetris_Logic.c:489:6:DrawTetrominoe	24	static
-../Core/Src/Tetris_Logic.c:528:6:DrawStartScreen	168	static
+../Core/Src/Tetris_Logic.c:438:6:DrawBoard	24	static
+../Core/Src/Tetris_Logic.c:514:6:DrawBlock	24	static
+../Core/Src/Tetris_Logic.c:530:6:DrawTetrominoe	24	static
+../Core/Src/Tetris_Logic.c:569:6:DrawStartScreen	296	static
+../Core/Src/Tetris_Logic.c:744:7:InitBoard	344	static
+../Core/Src/Tetris_Logic.c:788:7:SetTetrominoe	184	static

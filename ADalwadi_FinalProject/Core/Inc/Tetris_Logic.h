@@ -15,16 +15,16 @@
 
 #define U 0
 #define X 1
-#define K 2
+#define K -1
 
 
-#define O 0
-#define I 1
-#define S 2
-#define Z 3
-#define J 4
-#define L 5
-#define T 6
+#define O 2
+#define I 3
+#define S 4
+#define Z 5
+#define J 6
+#define L 7
+#define T 8
 
 #define MAXWIDTH  3
 #define IBLOCK_MW 4
@@ -80,14 +80,25 @@ typedef struct {
 
 
 
+typedef struct {
+
+	int8_t Field[14][12];
+
+} Board ;
+
+
+
+
 Tetrominoe BuildTetrominoe(uint8_t c);
 Tetrominoe RotateTetrominoe(Tetrominoe oldTetrominoe);
 Tetrominoe ShiftTetrominoe(Tetrominoe tetrominoe, uint8_t dir);
-void DrawBoard();
+void DrawBoard(Board b);
 void DrawBlock(uint16_t x, uint16_t y, uint16_t color);
 void DrawTetrominoe(Tetrominoe tetrominoe, uint16_t color);
 bool checkSet(Tetrominoe tetrominoe);
 void DrawStartScreen();
+Board InitBoard();
+Board SetTetrominoe(Tetrominoe t, Board b);
 
 
 

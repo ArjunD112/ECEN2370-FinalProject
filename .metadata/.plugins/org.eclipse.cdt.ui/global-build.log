@@ -1,4 +1,4 @@
-22:28:18 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:26:07 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
 arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -7,47 +7,33 @@ Finished building target: ADalwadi_FinalProject.elf
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
 arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  17080	     16	 155576	 172672	  2a280	ADalwadi_FinalProject.elf
+  17392	     16	 155744	 173152	  2a460	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
 Finished building: ADalwadi_FinalProject.list
  
-22:28:23 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:26:13 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
    text	   data	    bss	    dec	    hex	filename
-  17080	     16	 155576	 172672	  2a280	ADalwadi_FinalProject.elf
+  17392	     16	 155744	 173152	  2a460	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
-22:28:48 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:26:40 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
+arm-none-eabi-gcc "../Core/Src/ApplicationCode.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/ApplicationCode.d" -MT"Core/Src/ApplicationCode.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ApplicationCode.o"
 arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: ADalwadi_FinalProject.elf
  
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
 arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  17080	     16	 155576	 172672	  2a280	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:29:19 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  17080	     16	 155576	 172672	  2a280	ADalwadi_FinalProject.elf
+  17400	     16	 155744	 173160	  2a468	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
 Finished building: ADalwadi_FinalProject.list
  
-22:29:45 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:27:49 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
 arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -56,13 +42,14 @@ Finished building target: ADalwadi_FinalProject.elf
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
 arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  17080	     16	 155576	 172672	  2a280	ADalwadi_FinalProject.elf
+  17404	     16	 155744	 173164	  2a46c	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
 Finished building: ADalwadi_FinalProject.list
  
-22:30:11 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:28:51 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
+arm-none-eabi-gcc "../Core/Src/ApplicationCode.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/ApplicationCode.d" -MT"Core/Src/ApplicationCode.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ApplicationCode.o"
 arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
 arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: ADalwadi_FinalProject.elf
@@ -70,26 +57,26 @@ Finished building target: ADalwadi_FinalProject.elf
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
 arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  17080	     16	 155576	 172672	  2a280	ADalwadi_FinalProject.elf
+  17400	     16	 155744	 173160	  2a468	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
 Finished building: ADalwadi_FinalProject.list
  
-22:31:19 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:29:25 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
+arm-none-eabi-gcc "../Core/Src/ApplicationCode.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/ApplicationCode.d" -MT"Core/Src/ApplicationCode.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ApplicationCode.o"
 arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: ADalwadi_FinalProject.elf
  
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
 arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  17108	     16	 155576	 172700	  2a29c	ADalwadi_FinalProject.elf
+  17404	     16	 155744	 173164	  2a46c	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
 Finished building: ADalwadi_FinalProject.list
  
-22:31:56 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:30:18 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
 arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -98,12 +85,12 @@ Finished building target: ADalwadi_FinalProject.elf
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
 arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  17108	     16	 155576	 172700	  2a29c	ADalwadi_FinalProject.elf
+  17404	     16	 155744	 173164	  2a46c	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
 Finished building: ADalwadi_FinalProject.list
  
-22:32:21 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:30:44 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
 arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -112,12 +99,12 @@ Finished building target: ADalwadi_FinalProject.elf
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
 arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  17108	     16	 155576	 172700	  2a29c	ADalwadi_FinalProject.elf
+  17404	     16	 155744	 173164	  2a46c	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
 Finished building: ADalwadi_FinalProject.list
  
-22:32:46 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:31:24 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
 arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -126,13 +113,14 @@ Finished building target: ADalwadi_FinalProject.elf
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
 arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  17108	     16	 155576	 172700	  2a29c	ADalwadi_FinalProject.elf
+  17408	     16	 155744	 173168	  2a470	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
 Finished building: ADalwadi_FinalProject.list
  
-22:33:10 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:32:14 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
+arm-none-eabi-gcc "../Core/Src/ApplicationCode.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/ApplicationCode.d" -MT"Core/Src/ApplicationCode.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ApplicationCode.o"
 arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
 arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: ADalwadi_FinalProject.elf
@@ -140,13 +128,14 @@ Finished building target: ADalwadi_FinalProject.elf
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
 arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  17108	     16	 155576	 172700	  2a29c	ADalwadi_FinalProject.elf
+  17408	     16	 155744	 173168	  2a470	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
 Finished building: ADalwadi_FinalProject.list
  
-22:33:29 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:32:55 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
+arm-none-eabi-gcc "../Core/Src/ApplicationCode.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/ApplicationCode.d" -MT"Core/Src/ApplicationCode.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ApplicationCode.o"
 arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
 arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: ADalwadi_FinalProject.elf
@@ -154,416 +143,35 @@ Finished building target: ADalwadi_FinalProject.elf
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
 arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  17108	     16	 155576	 172700	  2a29c	ADalwadi_FinalProject.elf
+  17404	     16	 155744	 173164	  2a46c	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
 Finished building: ADalwadi_FinalProject.list
  
-22:33:57 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:34:11 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
+arm-none-eabi-gcc "../Core/Src/ApplicationCode.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/ApplicationCode.d" -MT"Core/Src/ApplicationCode.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ApplicationCode.o"
 arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: ADalwadi_FinalProject.elf
  
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
 arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  17108	     16	 155576	 172700	  2a29c	ADalwadi_FinalProject.elf
+  17412	     16	 155744	 173172	  2a474	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
 Finished building: ADalwadi_FinalProject.list
  
-22:34:53 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+17:34:49 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
+arm-none-eabi-gcc "../Core/Src/ApplicationCode.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/ApplicationCode.d" -MT"Core/Src/ApplicationCode.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ApplicationCode.o"
 arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: ADalwadi_FinalProject.elf
  
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
 arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
    text	   data	    bss	    dec	    hex	filename
-  17108	     16	 155576	 172700	  2a29c	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:38:55 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  17108	     16	 155576	 172700	  2a29c	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:41:45 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  17444	     20	 155580	 173044	  2a3f4	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:43:27 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-../Core/Src/Tetris_Logic.c: In function 'DrawStartScreen':
-../Core/Src/Tetris_Logic.c:672:30: warning: passing argument 3 of 'LCD_DrawChar' makes pointer from integer without a cast [-Wint-conversion]
-  672 |         LCD_DrawChar(35, 75, 'T');
-      |                              ^~~
-      |                              |
-      |                              int
-In file included from ../Core/Inc/Tetris_Logic.h:14,
-                 from ../Core/Src/Tetris_Logic.c:8:
-../Core/Inc/LCD_Driver.h:61:65: note: expected 'const uint16_t *' {aka 'const short unsigned int *'} but argument is of type 'int'
-   61 | void LCD_DrawChar(uint16_t Xpos, uint16_t Ypos, const uint16_t *c);
-      |                                                 ~~~~~~~~~~~~~~~~^
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/Tetris_Logic.o: in function `DrawStartScreen':
-C:/Users/Arjun/OneDrive - UCB-O365/AY 2024-2025/Fall 2024/ECEN 2370/ECEN2370-FinalProject/ADalwadi_FinalProject/Debug/../Core/Src/Tetris_Logic.c:672: undefined reference to `LCD_DrawChar'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:64: ADalwadi_FinalProject.elf] Error 1
-"make -j20 all" terminated with exit code 2. Build might be incomplete.
-22:43:42 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  17444	     20	 155580	 173044	  2a3f4	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:44:45 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  22136	     28	 155580	 177744	  2b650	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:46:03 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  24448	     36	 155580	 180064	  2bf60	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:46:50 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-../Core/Src/Tetris_Logic.c: In function 'DrawStartScreen':
-../Core/Src/Tetris_Logic.c:674:33: warning: passing argument 3 of 'LCD_DisplayChar' makes integer from pointer without a cast [-Wint-conversion]
-  674 |         LCD_DisplayChar(70, 70, "T");
-      |                                 ^~~
-      |                                 |
-      |                                 char *
-In file included from ../Core/Inc/Tetris_Logic.h:14,
-                 from ../Core/Src/Tetris_Logic.c:8:
-../Core/Inc/LCD_Driver.h:62:60: note: expected 'uint8_t' {aka 'unsigned char'} but argument is of type 'char *'
-   62 | void LCD_DisplayChar(uint16_t Xpos, uint16_t Ypos, uint8_t Ascii);
-      |                                                    ~~~~~~~~^~~~~
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  22056	     28	 155580	 177664	  2b600	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:47:13 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  22044	     28	 155580	 177652	  2b5f4	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:48:12 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  22044	     28	 155580	 177652	  2b5f4	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:49:04 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  22096	     28	 155580	 177704	  2b628	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:49:55 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  22096	     28	 155580	 177704	  2b628	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:50:29 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  22096	     28	 155580	 177704	  2b628	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:51:15 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  22096	     28	 155580	 177704	  2b628	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:51:53 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  22096	     28	 155580	 177704	  2b628	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:52:31 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  22096	     28	 155580	 177704	  2b628	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:56:04 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  24508	     36	 155580	 180124	  2bf9c	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:57:20 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  24508	     36	 155580	 180124	  2bf9c	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:57:55 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  24508	     36	 155580	 180124	  2bf9c	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-22:59:08 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  24508	     36	 155580	 180124	  2bf9c	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-23:00:23 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  24508	     36	 155580	 180124	  2bf9c	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-23:00:54 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  24508	     36	 155580	 180124	  2bf9c	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-23:02:45 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  24540	     36	 155580	 180156	  2bfbc	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-23:03:31 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  24540	     36	 155580	 180156	  2bfbc	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-23:03:54 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  24540	     36	 155580	 180156	  2bfbc	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-23:05:02 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  24540	     36	 155580	 180156	  2bfbc	ADalwadi_FinalProject.elf
-Finished building: default.size.stdout
- 
-Finished building: ADalwadi_FinalProject.list
- 
-23:05:48 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Tetris_Logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Tetris_Logic.d" -MT"Core/Src/Tetris_Logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Tetris_Logic.o"
-arm-none-eabi-gcc -o "ADalwadi_FinalProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Arjun\OneDrive - UCB-O365\AY 2024-2025\Fall 2024\ECEN 2370\ECEN2370-FinalProject\ADalwadi_FinalProject\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADalwadi_FinalProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADalwadi_FinalProject.elf
- 
-arm-none-eabi-size  ADalwadi_FinalProject.elf 
-arm-none-eabi-objdump -h -S ADalwadi_FinalProject.elf  > "ADalwadi_FinalProject.list"
-   text	   data	    bss	    dec	    hex	filename
-  28340	     36	 155580	 183956	  2ce94	ADalwadi_FinalProject.elf
+  28716	     36	 155748	 184500	  2d0b4	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  
 Finished building: ADalwadi_FinalProject.list

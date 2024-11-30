@@ -43,7 +43,7 @@ int main(void)
 
   LCD_Visual_Demo();
 
-  StartTimer();
+//  StartTimer();
 
   HAL_Delay(5000);
 

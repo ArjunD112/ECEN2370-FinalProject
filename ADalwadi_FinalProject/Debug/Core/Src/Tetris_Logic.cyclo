@@ -1,7 +1,9 @@
 ../Core/Src/Tetris_Logic.c:12:12:BuildTetrominoe	22
 ../Core/Src/Tetris_Logic.c:203:12:RotateTetrominoe	19
 ../Core/Src/Tetris_Logic.c:324:12:ShiftTetrominoe	19
-../Core/Src/Tetris_Logic.c:437:6:DrawBoard	5
-../Core/Src/Tetris_Logic.c:473:6:DrawBlock	2
-../Core/Src/Tetris_Logic.c:489:6:DrawTetrominoe	4
-../Core/Src/Tetris_Logic.c:528:6:DrawStartScreen	17
+../Core/Src/Tetris_Logic.c:438:6:DrawBoard	14
+../Core/Src/Tetris_Logic.c:514:6:DrawBlock	2
+../Core/Src/Tetris_Logic.c:530:6:DrawTetrominoe	4
+../Core/Src/Tetris_Logic.c:569:6:DrawStartScreen	17
+../Core/Src/Tetris_Logic.c:744:7:InitBoard	3
+../Core/Src/Tetris_Logic.c:788:7:SetTetrominoe	4
