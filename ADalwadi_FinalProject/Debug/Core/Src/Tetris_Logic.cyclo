@@ -13,3 +13,4 @@
 ../Core/Src/Tetris_Logic.c:864:6:CheckOverlap	5
 ../Core/Src/Tetris_Logic.c:884:6:CheckRow	3
 ../Core/Src/Tetris_Logic.c:899:7:CheckTetris	11
+../Core/Src/Tetris_Logic.c:949:12:NewTetrominoe	1

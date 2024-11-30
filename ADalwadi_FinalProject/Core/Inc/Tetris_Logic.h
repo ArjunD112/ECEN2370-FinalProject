@@ -12,11 +12,12 @@
 #include <stdbool.h>
 
 #include "LCD_Driver.h"
+#include "RNG_Driver.h"
+
 
 #define U 0
 #define X 1
 #define K -1
-
 
 #define O 2
 #define I 3
@@ -26,11 +27,7 @@
 #define L 7
 #define T 8
 
-#define MAXWIDTH  3
-#define IBLOCK_MW 4
-#define OBLOCK_MW 2
-
-#define START_POSITION_X 3
+#define START_POSITION_X 4
 #define START_POSITION_Y 0
 
 #define BOARD_WIDTH  10
@@ -104,7 +101,7 @@ void DrawEndScreen();
 bool CheckOverlap(Tetrominoe t, Board b);
 bool CheckRow(Board b, int8_t r);
 Board CheckTetris(Board b);
-
+Tetrominoe NewTetrominoe(Board b);
 
 
 #endif /* INC_TETRIS_LOGIC_H_ */

@@ -1,7 +1,7 @@
-22:38:25 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
+00:11:55 **** Incremental Build of configuration Debug for project ADalwadi_FinalProject ****
 make -j20 all 
 arm-none-eabi-size  ADalwadi_FinalProject.elf 
    text	   data	    bss	    dec	    hex	filename
-  29888	     36	 155748	 185672	  2d548	ADalwadi_FinalProject.elf
+  22624	     28	 155772	 178424	  2b8f8	ADalwadi_FinalProject.elf
 Finished building: default.size.stdout
  

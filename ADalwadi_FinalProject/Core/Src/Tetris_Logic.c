@@ -945,3 +945,13 @@ Board CheckTetris(Board b){
 
 }
 
+
+Tetrominoe NewTetrominoe(Board b){
+
+	uint32_t val = RNG_GenRandNum();
+
+	Tetrominoe t = BuildTetrominoe(val, b);
+
+	return t;
+
+}

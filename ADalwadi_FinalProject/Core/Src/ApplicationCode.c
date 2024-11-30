@@ -33,6 +33,8 @@ void ApplicationInit(void)
 
     Timer6Init();
 
+    RNG_Init();
+
 
     #if COMPILE_TOUCH_FUNCTIONS == 1
 	InitializeLCDTouch();
@@ -52,9 +54,16 @@ void LCD_Visual_Demo(void)
 {
 //	visualDemo();
 
-	board = InitBoard();
+//	board = InitBoard();
 
-	DrawStartScreen(board);
+//	DrawStartScreen(board);
+
+
+
+	while(1){
+		tetrominoe = NewTetrominoe(board);
+		HAL_Delay(500);
+	}
 
 
 //	DrawEndScreen();
@@ -174,24 +183,22 @@ void EXTI0_IRQHandler(){
 
 	HAL_NVIC_DisableIRQ(EXTI0_IRQn);
 
-//	t = ShiftTetrominoe(t, board, RIGHT);
-
-//	if(CheckCollision(t, board)){
+//	if(CheckCollision(tetrominoe, board)){
 //
-//		board = SetTetrominoe(t, board);
+//		board = SetTetrominoe(tetrominoe, board);
 //
-//		t = BuildTetrominoe(L, board);
+//		tetrominoe = NewTetrominoe(board);
 //
 //	}
 //
 //	else{
 //
-//		t = ShiftTetrominoe(t, DOWN);
+//		tetrominoe = ShiftTetrominoe(tetrominoe, board, DOWN);
 //
 //	}
 
 
-	tetrominoe = RotateTetrominoe(tetrominoe, board);
+//	tetrominoe = RotateTetrominoe(tetrominoe, board);
 
 
 	HAL_EXTI_ClearPending(EXTI_GPIOA, EXTI_TRIGGER_RISING);
