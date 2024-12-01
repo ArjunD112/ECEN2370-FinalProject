@@ -42,25 +42,29 @@ uint32_t RNG_GenRandNum(){
 	RNG_Init();
 
 
-	while(HAL_RNG_GenerateRandomNumber(&hrng, &randNum) != HAL_OK){
-		;
-	}
-
-
 	uint32_t rn = (randNum >> SHIFT) + MIN;
 
 
-	if(rn > MAX){
+	while(rn > MAX){
 
-		uint32_t s = (randNum >> SHIFT) + 1;
+		while(HAL_RNG_GenerateRandomNumber(&hrng, &randNum) != HAL_OK){;}
 
-		rn -= s;
-
-		if(rn < MIN){
-			rn = MIN;
-		}
+		rn = (randNum >> SHIFT) + MIN;
 
 	}
+
+
+//	if(rn > MAX){
+//
+//		uint32_t s = (randNum >> SHIFT) + 1;
+//
+//		rn -= s;
+//
+//		if(rn < MIN){
+//			rn = MIN;
+//		}
+//
+//	}
 
 
 	RNG_DeInit();

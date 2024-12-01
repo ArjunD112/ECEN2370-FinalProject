@@ -198,6 +198,10 @@ void EXTI0_IRQHandler(){
 
 	HAL_NVIC_DisableIRQ(EXTI0_IRQn);
 
+
+	tetrominoe = ShiftTetrominoe(tetrominoe, board, DOWN);
+
+
 	if(CheckCollision(tetrominoe, board)){
 
 		board = SetTetrominoe(tetrominoe, board);
@@ -206,11 +210,11 @@ void EXTI0_IRQHandler(){
 
 	}
 
-	else{
-
-		tetrominoe = ShiftTetrominoe(tetrominoe, board, DOWN);
-
-	}
+//	else{
+//
+//		tetrominoe = ShiftTetrominoe(tetrominoe, board, DOWN);
+//
+//	}
 
 
 //	tetrominoe = RotateTetrominoe(tetrominoe, board);
