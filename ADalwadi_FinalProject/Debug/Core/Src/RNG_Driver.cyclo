@@ -1,2 +1,3 @@
-../Core/Src/RNG_Driver.c:18:6:RNG_Init	1
-../Core/Src/RNG_Driver.c:28:10:RNG_GenRandNum	3
+../Core/Src/RNG_Driver.c:18:6:RNG_Init	2
+../Core/Src/RNG_Driver.c:31:6:RNG_DeInit	2
+../Core/Src/RNG_Driver.c:40:10:RNG_GenRandNum	4

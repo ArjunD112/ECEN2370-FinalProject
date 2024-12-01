@@ -11,7 +11,7 @@
 RNG_HandleTypeDef hrng;
 
 
-uint32_t randNum;
+uint32_t randNum = 0;
 
 
 
@@ -20,14 +20,32 @@ void RNG_Init(){
 	__HAL_RCC_RNG_CLK_ENABLE();
 
 	hrng.Instance = RNG;
-	HAL_RNG_Init(&hrng);
+
+	while(HAL_RNG_Init(&hrng) != HAL_OK){
+		;
+	}
+
+}
+
+
+void RNG_DeInit(){
+
+	while(HAL_RNG_DeInit(&hrng) != HAL_OK){
+		;
+	}
 
 }
 
 
 uint32_t RNG_GenRandNum(){
 
-	HAL_RNG_GenerateRandomNumber(&hrng, &randNum);
+	RNG_Init();
+
+
+	while(HAL_RNG_GenerateRandomNumber(&hrng, &randNum) != HAL_OK){
+		;
+	}
+
 
 	uint32_t rn = (randNum >> SHIFT) + MIN;
 
@@ -45,7 +63,11 @@ uint32_t RNG_GenRandNum(){
 	}
 
 
+	RNG_DeInit();
+
+
 	return rn;
 
 }
+
 

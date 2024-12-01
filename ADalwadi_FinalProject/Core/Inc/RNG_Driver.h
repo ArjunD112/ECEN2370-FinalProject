@@ -10,6 +10,7 @@
 
 #include "stm32f4xx_hal.h"
 #include <stdint.h>
+#include <stdbool.h>
 
 
 #define MIN    2
@@ -18,6 +19,7 @@
 
 
 void RNG_Init();
+void RNG_DeInit();
 uint32_t RNG_GenRandNum();
 
 #endif /* INC_RNG_DRIVER_H_ */

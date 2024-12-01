@@ -1,0 +1,16 @@
+/*
+ * ErrorHandler.h
+ *
+ *  Created on: Nov 30, 2024
+ *      Author: Arjun
+ */
+
+#ifndef INC_ERRORHANDLER_H_
+#define INC_ERRORHANDLER_H_
+
+#include "stm32f4xx_hal.h"
+
+
+void Error_Handler();
+
+#endif /* INC_ERRORHANDLER_H_ */

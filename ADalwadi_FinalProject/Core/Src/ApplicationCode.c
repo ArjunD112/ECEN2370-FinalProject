@@ -33,7 +33,7 @@ void ApplicationInit(void)
 
     Timer6Init();
 
-    RNG_Init();
+
 
 
     #if COMPILE_TOUCH_FUNCTIONS == 1
@@ -54,16 +54,31 @@ void LCD_Visual_Demo(void)
 {
 //	visualDemo();
 
-//	board = InitBoard();
 
 //	DrawStartScreen(board);
 
+	board = InitBoard();
 
+	tetrominoe = NewTetrominoe(board);
 
-	while(1){
-		tetrominoe = NewTetrominoe(board);
-		HAL_Delay(500);
-	}
+//	HAL_Delay(5000);
+
+//	for(int i = 0; i < 3; i++){
+//
+//		tetrominoe = NewTetrominoe(board);
+//		HAL_Delay(500);
+//	}
+//
+
+//
+//	HAL_Delay(500);
+//
+//
+//	for(int i = 0; i < 3; i++){
+//
+//			tetrominoe = NewTetrominoe(board);
+//			HAL_Delay(500);
+//		}
 
 
 //	DrawEndScreen();
@@ -183,19 +198,19 @@ void EXTI0_IRQHandler(){
 
 	HAL_NVIC_DisableIRQ(EXTI0_IRQn);
 
-//	if(CheckCollision(tetrominoe, board)){
-//
-//		board = SetTetrominoe(tetrominoe, board);
-//
-//		tetrominoe = NewTetrominoe(board);
-//
-//	}
-//
-//	else{
-//
-//		tetrominoe = ShiftTetrominoe(tetrominoe, board, DOWN);
-//
-//	}
+	if(CheckCollision(tetrominoe, board)){
+
+		board = SetTetrominoe(tetrominoe, board);
+
+		tetrominoe = NewTetrominoe(board);
+
+	}
+
+	else{
+
+		tetrominoe = ShiftTetrominoe(tetrominoe, board, DOWN);
+
+	}
 
 
 //	tetrominoe = RotateTetrominoe(tetrominoe, board);
