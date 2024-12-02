@@ -42,7 +42,7 @@ uint32_t RNG_GenRandNum(){
 	RNG_Init();
 
 
-	uint32_t rn = (randNum >> SHIFT) + MIN;
+	uint32_t rn = MAX + MIN;
 
 
 	while(rn > MAX){
@@ -52,19 +52,6 @@ uint32_t RNG_GenRandNum(){
 		rn = (randNum >> SHIFT) + MIN;
 
 	}
-
-
-//	if(rn > MAX){
-//
-//		uint32_t s = (randNum >> SHIFT) + 1;
-//
-//		rn -= s;
-//
-//		if(rn < MIN){
-//			rn = MIN;
-//		}
-//
-//	}
 
 
 	RNG_DeInit();

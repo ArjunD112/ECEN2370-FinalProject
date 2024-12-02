@@ -89,14 +89,14 @@ typedef struct {
 Tetrominoe BuildTetrominoe(uint8_t c, Board b);
 Tetrominoe RotateTetrominoe(Tetrominoe oldTetrominoe, Board b);
 Tetrominoe ShiftTetrominoe(Tetrominoe tetrominoe, Board b, uint8_t dir);
-void DrawBoard(Board b);
+void DrawBoard();
+void UpdateBoard(Board b);
 void DrawBlock(uint16_t x, uint16_t y, uint16_t color);
 void DrawTetrominoe(Tetrominoe tetrominoe, uint16_t color);
 bool CheckCollision(Tetrominoe tetrominoe, Board b);
 void DrawStartScreen();
 Board InitBoard();
 Board SetTetrominoe(Tetrominoe t, Board b);
-bool CheckValidSpawn(Tetrominoe t, Board b);
 void DrawEndScreen();
 bool CheckOverlap(Tetrominoe t, Board b);
 bool CheckRow(Board b, int8_t r);

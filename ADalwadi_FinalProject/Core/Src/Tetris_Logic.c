@@ -113,9 +113,9 @@ Tetrominoe BuildTetrominoe(uint8_t c, Board b){
 
 			case J:
 
-				bool blk4[4][4] = {{U, X, U, U},
-								   {U, X, U, U},
-								   {X, X, U, U},
+				bool blk4[4][4] = {{X, X, X, U},
+								   {U, U, X, U},
+								   {U, U, U, U},
 								   {U, U, U, U}};
 
 				for(int i = 0; i < 3; i++){
@@ -129,17 +129,17 @@ Tetrominoe BuildTetrominoe(uint8_t c, Board b){
 
 				tetrominoe.Name = J;
 				tetrominoe.Color = LCD_COLOR_ORANGE;
-				tetrominoe.Width = 2;
-				tetrominoe.Height = 3;
+				tetrominoe.Width = 3;
+				tetrominoe.Height = 2;
 
 				break;
 
 
 			case L:
 
-				bool blk5[4][4] = {{U, X, U, U},
-								   {U, X, U, U},
-								   {U, X, X, U},
+				bool blk5[4][4] = {{X, X, X, U},
+								   {X, U, U, U},
+								   {U, U, U, U},
 								   {U, U, U, U}};
 
 				for(int i = 0; i < 3; i++){
@@ -153,8 +153,8 @@ Tetrominoe BuildTetrominoe(uint8_t c, Board b){
 
 				tetrominoe.Name = L;
 				tetrominoe.Color = LCD_COLOR_MAGENTA;
-				tetrominoe.Width = 2;
-				tetrominoe.Height = 3;
+				tetrominoe.Width = 3;
+				tetrominoe.Height = 2;
 
 				break;
 
@@ -192,7 +192,7 @@ Tetrominoe BuildTetrominoe(uint8_t c, Board b){
 	tetrominoe.Set = U;
 
 
-	if(CheckValidSpawn(tetrominoe, b)){
+	if(!CheckOverlap(tetrominoe, b)){
 
 		DrawTetrominoe(tetrominoe, tetrominoe.Color);
 
@@ -464,14 +464,14 @@ Tetrominoe ShiftTetrominoe(Tetrominoe oldTetrominoe, Board b, uint8_t dir){
 }
 
 
-void DrawBoard(Board b){
+void DrawBoard(){
 
 	LCD_Clear(0, LCD_COLOR_BLACK);
 
 	for(uint16_t i = U; i <= BOARD_MARGIN; i++){
 
-		LCD_Draw_Vertical_Line(i, MIN_GRID_Y, LCD_PIXEL_HEIGHT - MIN_GRID_Y, LCD_COLOR_WHITE);
-		LCD_Draw_Vertical_Line((LCD_PIXEL_WIDTH - i), MIN_GRID_Y, LCD_PIXEL_HEIGHT - MIN_GRID_Y, LCD_COLOR_WHITE);
+		LCD_Draw_Vertical_Line(i, MIN_GRID_Y + X, LCD_PIXEL_HEIGHT - MIN_GRID_Y, LCD_COLOR_WHITE);
+		LCD_Draw_Vertical_Line((LCD_PIXEL_WIDTH - i), MIN_GRID_Y + X, LCD_PIXEL_HEIGHT - MIN_GRID_Y, LCD_COLOR_WHITE);
 
 	}
 
@@ -486,7 +486,7 @@ void DrawBoard(Board b){
 	for(uint16_t j = LCD_PIXEL_HEIGHT; j >= LCD_PIXEL_HEIGHT - BOARD_MARGIN; j--){
 
 		LCD_Draw_Horizontal_Line(U, j, LCD_PIXEL_WIDTH, LCD_COLOR_WHITE);
-		LCD_Draw_Horizontal_Line(U, j - LCD_PIXEL_HEIGHT + MIN_GRID_Y + X, LCD_PIXEL_WIDTH, LCD_COLOR_WHITE);
+//		LCD_Draw_Horizontal_Line(U, j - LCD_PIXEL_HEIGHT + MIN_GRID_Y + X, LCD_PIXEL_WIDTH, LCD_COLOR_WHITE);
 
 	}
 
@@ -498,6 +498,10 @@ void DrawBoard(Board b){
 	}
 
 
+}
+
+
+void UpdateBoard(Board b){
 
 	for(int k = 1; k <= BOARD_LENGTH + 1; k++){
 		for(int l = 0; l <= BOARD_WIDTH + 1; l++){
@@ -531,7 +535,6 @@ void DrawBoard(Board b){
 			case T:
 				DrawBlock(l-1, k-1, LCD_COLOR_BLUE2);
 				break;
-
 
 			}
 		}
@@ -787,7 +790,7 @@ Board InitBoard(){
 	}
 
 
-	DrawBoard(newBoard);
+	DrawBoard();
 
 	return newBoard;
 
@@ -809,31 +812,11 @@ Board SetTetrominoe(Tetrominoe t, Board b){
 		}
 	}
 
-	DrawBoard(b);
+	UpdateBoard(b);
 
 	b = CheckTetris(b);
 
 	return b;
-
-}
-
-
-bool CheckValidSpawn(Tetrominoe t, Board b){
-
-	int8_t x = t.XPosition + 1;
-	int8_t y = t.YPosition + 1;
-
-	int8_t bottom = y + t.Height - 1;
-
-	for(int i = 0; i < 4; i++){
-
-		if(b.Field[bottom][x + i] != U){
-			return false;
-		}
-
-	}
-
-	return true;
 
 }
 
@@ -934,7 +917,7 @@ Board CheckTetris(Board b){
 		}
 
 
-		DrawBoard(b);
+		UpdateBoard(b);
 
 	}
 
