@@ -45,7 +45,7 @@ int main(void)
 
 //  StartTimer();
 
-  HAL_Delay(5000);
+  HAL_Delay(50);
 
   // DO NOT CALL THIS FUNCTION WHEN INTERRUPT MODE IS SELECTED IN THE COMPILE SWITCH IN stmpe811.h
   // Un-comment the below function after setting COMPILE_TOUCH to 1 in stmpe811.h
@@ -53,7 +53,15 @@ int main(void)
 
   while (1)
   {
+	  if(ReturnEnd()){
 
+		  DrawEndScreen();
+
+		  break;
+
+	  }
+
+	  HAL_Delay(50);
   }
 
 }

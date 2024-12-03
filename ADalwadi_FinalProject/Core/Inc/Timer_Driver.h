@@ -12,14 +12,15 @@
 
 
 
-#define PSC_VAL 2999
-#define ARR_VAL 6249
+#define PSC_VAL 14399
+#define ARR_VAL 9999
 
 
 
-void Timer6Init();
+void Timer7Init();
+void Timer7DeInit();
 void StartTimer();
-void StopTimer();
+uint16_t StopTimer();
 void TIM_ClearInterruptFlag();
 
 

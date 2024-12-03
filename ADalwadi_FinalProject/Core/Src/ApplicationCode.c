@@ -31,8 +31,6 @@ void ApplicationInit(void)
 
     Button_Init_InterruptMode();
 
-    Timer6Init();
-
 
 
 
@@ -60,6 +58,8 @@ void LCD_Visual_Demo(void)
 	board = InitBoard();
 
 	tetrominoe = NewTetrominoe(board);
+
+	StartTimer();
 
 //	HAL_Delay(5000);
 
@@ -199,6 +199,21 @@ void EXTI0_IRQHandler(){
 	HAL_NVIC_DisableIRQ(EXTI0_IRQn);
 
 
+	tetrominoe = RotateTetrominoe(tetrominoe, board);
+
+
+	HAL_EXTI_ClearPending(EXTI_GPIOA, EXTI_TRIGGER_RISING);
+
+	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
+}
+
+
+void TIM7_IRQHandler(){
+
+	HAL_NVIC_DisableIRQ(TIM7_IRQn);
+
+
 	if(CheckCollision(tetrominoe, board)){
 
 		board = SetTetrominoe(tetrominoe, board);
@@ -214,19 +229,25 @@ void EXTI0_IRQHandler(){
 	}
 
 
-//	tetrominoe = RotateTetrominoe(tetrominoe, board);
+	IncTime();
 
 
-	HAL_EXTI_ClearPending(EXTI_GPIOA, EXTI_TRIGGER_RISING);
+	TIM_ClearInterruptFlag();
 
-	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
+	HAL_NVIC_EnableIRQ(TIM7_IRQn);
 
 }
 
 
-//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
-//
-//    tetrominoe = RotateTetrominoe(tetrominoe);
-//
-//}
+
+// TOUCHSCREEN INTERRUPT
+
+// if left side, shift left
+
+// if right side, shift right
+
+// on start screen, if tap anywhere, call TetrisInit()
+
+// on end screen, if tap anywhere, call TetrisInit(),
 

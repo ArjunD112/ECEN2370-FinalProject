@@ -13,6 +13,7 @@
 
 #include "LCD_Driver.h"
 #include "RNG_Driver.h"
+#include "Timer_Driver.h"
 
 
 #define U 0
@@ -50,6 +51,8 @@
 
 #define LCD_X_MIN 6
 #define LCD_Y_MIN 40
+
+#define TIME_MUL 2
 
 
 
@@ -102,6 +105,8 @@ bool CheckOverlap(Tetrominoe t, Board b);
 bool CheckRow(Board b, int8_t r);
 Board CheckTetris(Board b);
 Tetrominoe NewTetrominoe(Board b);
+bool ReturnEnd();
+void IncTime();
 
 
 #endif /* INC_TETRIS_LOGIC_H_ */
