@@ -58,7 +58,7 @@ int main(void)
 		  DrawEndScreen();
 
 		  break;
-		  //end of program. Press the reset button to play again
+
 	  }
 
 	  HAL_Delay(50);

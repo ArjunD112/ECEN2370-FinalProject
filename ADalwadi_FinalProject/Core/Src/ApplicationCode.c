@@ -10,6 +10,7 @@
 /* Static variables */
 static Tetrominoe tetrominoe = {U};
 static Board board = {0};
+static bool started = false;
 
 
 extern void initialise_monitor_handles(void); 
@@ -53,13 +54,9 @@ void LCD_Visual_Demo(void)
 //	visualDemo();
 
 
-//	DrawStartScreen(board);
+	DrawStartScreen(board);
 
-	board = InitBoard();
 
-	tetrominoe = NewTetrominoe(board);
-
-	StartTimer();
 
 //	HAL_Delay(5000);
 
@@ -199,7 +196,18 @@ void EXTI0_IRQHandler(){
 	HAL_NVIC_DisableIRQ(EXTI0_IRQn);
 
 
-	tetrominoe = RotateTetrominoe(tetrominoe, board);
+	if(!started){
+		board = InitBoard();
+
+		tetrominoe = NewTetrominoe(board);
+
+		StartTimer();
+
+		started = true;
+	}
+	else{
+		tetrominoe = RotateTetrominoe(tetrominoe, board);
+	}
 
 
 	HAL_EXTI_ClearPending(EXTI_GPIOA, EXTI_TRIGGER_RISING);
@@ -239,15 +247,4 @@ void TIM7_IRQHandler(){
 
 }
 
-
-
-// TOUCHSCREEN INTERRUPT
-
-// if left side, shift left
-
-// if right side, shift right
-
-// on start screen, if tap anywhere, call TetrisInit()
-
-// on end screen, if tap anywhere, call TetrisInit(),
 

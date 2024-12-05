@@ -618,6 +618,11 @@ void DrawStartScreen(Board b){
 
 	HAL_Delay(100);
 
+	for(int i = 0; i < 3; i++){
+		t = RotateTetrominoe(t, b);
+		HAL_Delay(100);
+	}
+
 	for(int i = 0; i < 5; i++){
 		t = ShiftTetrominoe(t, b, LEFT);
 		t = ShiftTetrominoe(t, b, DOWN);
@@ -669,14 +674,20 @@ void DrawStartScreen(Board b){
 
 	t = BuildTetrominoe(J, b);
 
-	for(int i = 0; i < 3; i++){
+	HAL_Delay(100);
+
+	t = RotateTetrominoe(t, b);
+
+	HAL_Delay(100);
+
+	for(int i = 0; i < 2; i++){
 		t = ShiftTetrominoe(t, b, DOWN);
 		t = ShiftTetrominoe(t, b, RIGHT);
 
 		HAL_Delay(100);
 	}
 
-	for(int i = 0; i < 6; i++){
+	for(int i = 0; i < 7; i++){
 		t = ShiftTetrominoe(t, b, DOWN);
 
 		HAL_Delay(100);

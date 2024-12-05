@@ -10,6 +10,7 @@
 /* Static variables */
 static Tetrominoe tetrominoe = {U};
 static Board board = {0};
+static bool started = false;
 
 
 extern void initialise_monitor_handles(void); 
@@ -31,9 +32,7 @@ void ApplicationInit(void)
 
     Button_Init_InterruptMode();
 
-    Timer6Init();
 
-    RNG_Init();
 
 
     #if COMPILE_TOUCH_FUNCTIONS == 1
@@ -54,11 +53,29 @@ void LCD_Visual_Demo(void)
 {
 //	visualDemo();
 
-	board = InitBoard();
-//
-//	DrawStartScreen(board);
 
-	tetrominoe = NewTetrominoe(board);
+	DrawStartScreen(board);
+
+
+
+//	HAL_Delay(5000);
+
+//	for(int i = 0; i < 3; i++){
+//
+//		tetrominoe = NewTetrominoe(board);
+//		HAL_Delay(500);
+//	}
+//
+
+//
+//	HAL_Delay(500);
+//
+//
+//	for(int i = 0; i < 3; i++){
+//
+//			tetrominoe = NewTetrominoe(board);
+//			HAL_Delay(500);
+//		}
 
 
 //	DrawEndScreen();
@@ -178,7 +195,32 @@ void EXTI0_IRQHandler(){
 
 	HAL_NVIC_DisableIRQ(EXTI0_IRQn);
 
-	tetrominoe = ShiftTetrominoe(tetrominoe, board, RIGHT);
+
+	if(!start){
+		board = InitBoard();
+
+		tetrominoe = NewTetrominoe(board);
+
+		StartTimer();
+
+		start = true;
+	}
+	else{
+		tetrominoe = RotateTetrominoe(tetrominoe, board);
+	}
+
+
+	HAL_EXTI_ClearPending(EXTI_GPIOA, EXTI_TRIGGER_RISING);
+
+	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
+}
+
+
+void TIM7_IRQHandler(){
+
+	HAL_NVIC_DisableIRQ(TIM7_IRQn);
+
 
 	if(CheckCollision(tetrominoe, board)){
 
@@ -195,19 +237,14 @@ void EXTI0_IRQHandler(){
 	}
 
 
-//	tetrominoe = RotateTetrominoe(tetrominoe, board);
+	IncTime();
 
 
-	HAL_EXTI_ClearPending(EXTI_GPIOA, EXTI_TRIGGER_RISING);
+	TIM_ClearInterruptFlag();
 
-	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
+	HAL_NVIC_EnableIRQ(TIM7_IRQn);
 
 }
 
-
-//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
-//
-//    tetrominoe = RotateTetrominoe(tetrominoe);
-//
-//}
 
