@@ -828,9 +828,9 @@ Board SetTetrominoe(Tetrominoe t, Board b){
 		}
 	}
 
-	UpdateBoard(b);
-
 	b = CheckTetris(b);
+
+	UpdateBoard(b);
 
 	return b;
 

@@ -137,6 +137,7 @@ STMPE811_State_t STMPE811_ReadTouch(STMPE811_TouchData *data);
 uint8_t STMPE811_Read(uint8_t reg);
 void STMPE811_Write(uint8_t reg, uint8_t dataToWrite);
 STMPE811_State_t STMPE811_Init(void);
+void STMPE811_DeInit(void);
 bool isSTMPE811_Ready(void);
 void STMPE811_DetermineTouchPosition(STMPE811_TouchData * data);
 

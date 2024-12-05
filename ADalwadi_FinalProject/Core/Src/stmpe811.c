@@ -16,6 +16,8 @@ static void I2C3_MspInit(void);
 static void I2C3_Init();
 //static void stmpe811_MspInit(void);
 
+static void I2C3_DeInit(void);
+
 
 /* Private functions */
 uint8_t TM_STMPE811_Read(uint8_t reg);
@@ -29,7 +31,7 @@ void I2C3_MulitByteRead(uint8_t address, uint8_t reg, uint8_t * rxData, uint16_t
 static I2C_HandleTypeDef hI2C3;
 static HAL_StatusTypeDef HAL_status;
 
-#define DEFAULT_TESTING_TIMEOUT 250000
+#define DEFAULT_TESTING_TIMEOUT 1000
 
 /* The below function was created by Tilen MAJERLE but modified by Xavion */
 STMPE811_State_t STMPE811_Init(void)
@@ -47,9 +49,9 @@ STMPE811_State_t STMPE811_Init(void)
 
     /* Reset */
     I2C3_Write(STMPE811_ADDRESS, STMPE811_SYS_CTRL1, 0x02);
-    HAL_Delay(5);
+//    HAL_Delay(5);
     I2C3_Write(STMPE811_ADDRESS, STMPE811_SYS_CTRL1, 0x00);
-    HAL_Delay(2);
+//    HAL_Delay(2);
 
     /* Check for STMPE811 Connected */
     uint16_t dataRecieved;
@@ -64,9 +66,9 @@ STMPE811_State_t STMPE811_Init(void)
 
     /* Reset */
     I2C3_Write(STMPE811_ADDRESS, STMPE811_SYS_CTRL1, 0x02);
-    HAL_Delay(5);
+//    HAL_Delay(5);
     I2C3_Write(STMPE811_ADDRESS, STMPE811_SYS_CTRL1, 0x00);
-    HAL_Delay(2);
+//    HAL_Delay(2);
 
     /* Get the current register value */
     mode = STMPE811_Read(STMPE811_SYS_CTRL2);
@@ -80,7 +82,7 @@ STMPE811_State_t STMPE811_Init(void)
     I2C3_Write(STMPE811_ADDRESS, STMPE811_ADC_CTRL1, 0x49);
 
     /* Wait for 2 ms */
-    HAL_Delay(2);
+//    HAL_Delay(2);
 
     /* Select the ADC clock speed: 3.25 MHz */
     I2C3_Write(STMPE811_ADDRESS, STMPE811_ADC_CTRL2, 0x01);
@@ -142,9 +144,16 @@ STMPE811_State_t STMPE811_Init(void)
     #endif // COMPILE_TOUCH_INTERRUPT_SUPPORT
     
     /* Wait for 2 ms delay */
-    HAL_Delay(200);
+//    HAL_Delay(200);
 
     return STMPE811_State_Ok;
+
+}
+
+
+void STMPE811_DeInit(void){
+
+	I2C3_DeInit();
 
 }
 
@@ -344,13 +353,28 @@ static void I2C3_MspInit(void)
     
 }
 
+
+static void I2C3_DeInit(void){
+
+	HAL_I2C_DeInit(&hI2C3);
+
+	__HAL_RCC_I2C3_CLK_DISABLE();
+
+    HAL_GPIO_DeInit(I2C3_SDA_GPIO_Port, I2C3_SDA_Pin);
+
+    HAL_GPIO_DeInit(I2C3_SCL_GPIO_Port, I2C3_SCL_Pin);
+
+}
+
+
+
 // This function should only be used for single BYTE transfers 
 void I2C3_Write(uint16_t devAddr, uint8_t reg, uint8_t data)
 {
     uint8_t dataConversion = data; // data will be a raw hex value this is mainly for debugging...
     // Learning topic - Is this needed? Or can I just use &data in the function call? 
     HAL_status = HAL_I2C_Mem_Write(&hI2C3, devAddr, reg, I2C_MEMADD_SIZE_8BIT, &dataConversion, ONEBYTE, DEFAULT_TESTING_TIMEOUT);
-    verifyHAL_I2C_IS_OKAY();
+//    verifyHAL_I2C_IS_OKAY();
 }
 
 // This function should only be used for single BYTE transfers 
@@ -358,7 +382,7 @@ void I2C3_Read(uint8_t address, uint8_t reg, uint8_t * rxData)
 {
     // Need to use MEM functions
     HAL_status = HAL_I2C_Mem_Read(&hI2C3, address, reg, I2C_MEMADD_SIZE_8BIT, rxData, ONEBYTE, DEFAULT_TESTING_TIMEOUT);
-    verifyHAL_I2C_IS_OKAY();
+//    verifyHAL_I2C_IS_OKAY();
 }
 
 // This function should be used for multiple byte reads from a reg

@@ -159,18 +159,16 @@ void EXTI15_10_IRQHandler()
 	// Determine if it is pressed or unpressed
 	if(isTouchDetected) // Touch has been detected
 	{
-		printf("\nPressed");
-		// May need to do numerous retries? 
 		DetermineTouchPosition(&StaticTouchData);
-		/* Touch valid */
-		printf("\nX: %03d\nY: %03d \n", StaticTouchData.x, StaticTouchData.y);
-		LCD_Clear(0, LCD_COLOR_RED);
 
-	}else{
+		if(StaticTouchData.x < 120){
+			tetrominoe = ShiftTetrominoe(tetrominoe, board, LEFT);
+		}
+		else{
+			tetrominoe = ShiftTetrominoe(tetrominoe, board, RIGHT);
+		}
 
-		/* Touch not pressed */
-		printf("\nNot pressed \n");
-		LCD_Clear(0, LCD_COLOR_GREEN);
+
 	}
 
 	STMPE811_Write(STMPE811_FIFO_STA, 0x01);
@@ -181,7 +179,10 @@ void EXTI15_10_IRQHandler()
 	HAL_EXTI_ClearPending(&LCDTouchIRQ, EXTI_TRIGGER_RISING_FALLING);
 
 	HAL_NVIC_ClearPendingIRQ(EXTI15_10_IRQn);
-	HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
+	STMPE811_DeInit();
+
+	STMPE811_Init();
 
 	//Potential ERRATA? Clearing IRQ bit again due to an IRQ being triggered DURING the handling of this IRQ..
 	WriteDataToTouchModule(STMPE811_INT_STA, clearIRQData);
