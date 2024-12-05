@@ -508,7 +508,7 @@ void DrawBoard(){
 
 void UpdateBoard(Board b){
 
-	for(int k = 1; k <= BOARD_LENGTH + 1; k++){
+	for(int k = 0; k <= BOARD_LENGTH + 1; k++){
 		for(int l = 0; l <= BOARD_WIDTH + 1; l++){
 
 			switch(b.Field[k][l]){
@@ -828,9 +828,9 @@ Board SetTetrominoe(Tetrominoe t, Board b){
 		}
 	}
 
-	b = CheckTetris(b);
-
 	UpdateBoard(b);
+
+	b = CheckTetris(b);
 
 	return b;
 
@@ -934,7 +934,7 @@ Board CheckTetris(Board b){
 
 	if(bottomRow != U && topRow != BOARD_LENGTH + X){
 
-		uint8_t numLevels = bottomRow - topRow + X;
+		uint8_t numLevels = bottomRow - topRow;
 
 		for(int i = bottomRow; i > U + numLevels; i--){
 			for(int j = X; j <= BOARD_WIDTH; j++){
