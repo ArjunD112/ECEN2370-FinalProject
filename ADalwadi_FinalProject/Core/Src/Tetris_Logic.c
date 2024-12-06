@@ -8,8 +8,9 @@
 #include "Tetris_Logic.h"
 
 
-static uint16_t time;
 volatile bool end = false;
+
+static uint16_t time;
 
 
 Tetrominoe BuildTetrominoe(uint8_t c, Board b){
@@ -779,17 +780,23 @@ void DrawStartScreen(Board b){
 	LCD_SetTextColor(LCD_COLOR_WHITE);
 	LCD_SetFont(&Font12x12);
 
-	LCD_DisplayChar(70, 150, 'T');
-	LCD_DisplayChar(80, 150, 'a');
-	LCD_DisplayChar(90, 150, 'p');
+	LCD_DisplayChar(92, 140, 'P');
+	LCD_DisplayChar(100, 140, 'r');
+	LCD_DisplayChar(105, 140, 'e');
+	LCD_DisplayChar(113, 140, 's');
+	LCD_DisplayChar(120, 140, 's');
 
-	LCD_DisplayChar(110, 150, 'T');
-	LCD_DisplayChar(120, 150, 'o');
+	LCD_DisplayChar(130, 140, 'B');
+	LCD_DisplayChar(141, 140, 't');
+	LCD_DisplayChar(147, 140, 'n');
 
-	LCD_DisplayChar(140, 150, 'P');
-	LCD_DisplayChar(150, 150, 'l');
-	LCD_DisplayChar(155, 150, 'a');
-	LCD_DisplayChar(165, 150, 'y');
+	LCD_DisplayChar(100, 153, 'T');
+	LCD_DisplayChar(107, 153, 'o');
+
+	LCD_DisplayChar(117, 153, 'P');
+	LCD_DisplayChar(126, 153, 'l');
+	LCD_DisplayChar(130, 153, 'a');
+	LCD_DisplayChar(138, 153, 'y');
 
 }
 
@@ -847,28 +854,51 @@ void DrawEndScreen(){
 	LCD_SetTextColor(LCD_COLOR_WHITE);
 	LCD_SetFont(&Font16x24);
 
-	LCD_DisplayChar(90, 100, 'G');
-	LCD_DisplayChar(105, 100, 'A');
-	LCD_DisplayChar(120, 100, 'M');
-	LCD_DisplayChar(136, 100, 'E');
+	LCD_DisplayChar(90, 50, 'G');
+	LCD_DisplayChar(105, 50, 'A');
+	LCD_DisplayChar(120, 50, 'M');
+	LCD_DisplayChar(136, 50, 'E');
 
-	LCD_DisplayChar(90, 120, 'O');
-	LCD_DisplayChar(105, 120, 'V');
-	LCD_DisplayChar(120, 120, 'E');
-	LCD_DisplayChar(136, 120, 'R');
+	LCD_DisplayChar(90, 75, 'O');
+	LCD_DisplayChar(105, 75, 'V');
+	LCD_DisplayChar(120, 75, 'E');
+	LCD_DisplayChar(136, 75, 'R');
 
 
 
 	uint16_t c = StopTimer();
 
-	c = (c * TIME_MUL) / ARR_VAL;
+	c = (uint8_t) (c * TIME_MUL) / ARR_VAL;
 
 	time += c;
 
-	time += '0';
 
-	// need to parse digits using % to print to screen
+	LCD_DisplayChar(42, 150, 'T');
+	LCD_DisplayChar(54, 150, 'i');
+	LCD_DisplayChar(66, 150, 'm');
+	LCD_DisplayChar(80, 150, 'e');
+	LCD_DisplayChar(92, 150, ':');
 
+
+	uint8_t count = 142;
+
+
+	while(time > 0){
+
+		uint8_t temp = (time % 10) + '0';
+
+		LCD_DisplayChar(count, 150, temp);
+
+		time /= 10;
+
+		count -= 15;
+
+	}
+
+
+	LCD_DisplayChar(162, 150, 's');
+	LCD_DisplayChar(172, 150, 'e');
+	LCD_DisplayChar(183, 150, 'c');
 
 }
 

@@ -53,6 +53,7 @@ int main(void)
 
   while (1)
   {
+
 	  if(ReturnEnd()){
 
 		  DrawEndScreen();
@@ -63,6 +64,8 @@ int main(void)
 
 	  HAL_Delay(50);
   }
+
+
 
 }
 
