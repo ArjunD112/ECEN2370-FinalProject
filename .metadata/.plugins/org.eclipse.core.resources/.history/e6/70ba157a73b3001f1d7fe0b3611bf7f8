@@ -508,8 +508,8 @@ void DrawBoard(){
 
 void UpdateBoard(Board b){
 
-	for(int k = 0; k <= BOARD_LENGTH + X; k++){
-		for(int l = 0; l <= BOARD_WIDTH + X; l++){
+	for(int k = 0; k <= BOARD_LENGTH + 1; k++){
+		for(int l = 0; l <= BOARD_WIDTH + 1; l++){
 
 			switch(b.Field[k][l]){
 
@@ -540,9 +540,6 @@ void UpdateBoard(Board b){
 			case T:
 				DrawBlock(l-1, k-1, LCD_COLOR_BLUE2);
 				break;
-
-			case U:
-				DrawBlock(l-1, k-1, LCD_COLOR_BLACK);
 
 			}
 		}
@@ -910,21 +907,10 @@ bool CheckRow(Board b, int8_t r){
 
 Board CheckTetris(Board b){
 
-	int8_t bottomRow = BOARD_LENGTH + X;
-	int8_t topRow = bottomRow;
+	int8_t bottomRow = U;
+	int8_t topRow = BOARD_LENGTH + X;
 
 	for(int r = BOARD_LENGTH; r > 0; r--){
-
-		if(CheckRow(b, r) && r < bottomRow){
-
-			bottomRow = r;
-
-		}
-
-	}
-
-
-	for(int r = bottomRow; r > 0; r--){
 
 		if(CheckRow(b, r) && r < topRow){
 
@@ -935,11 +921,22 @@ Board CheckTetris(Board b){
 	}
 
 
-	if(bottomRow < BOARD_LENGTH + X){
+	for(int r = topRow; r <= BOARD_LENGTH; r++){
 
-		uint8_t numLevels = bottomRow - topRow + X;
+		if(CheckRow(b, r) && r > bottomRow){
 
-		for(int i = bottomRow; i > numLevels; i--){
+			bottomRow = r;
+
+		}
+
+	}
+
+
+	if(bottomRow != U && topRow != BOARD_LENGTH + X){
+
+		uint8_t numLevels = bottomRow - topRow;
+
+		for(int i = bottomRow; i > U + numLevels; i--){
 			for(int j = X; j <= BOARD_WIDTH; j++){
 
 				b.Field[i][j] = b.Field[i - numLevels][j];

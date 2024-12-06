@@ -508,8 +508,8 @@ void DrawBoard(){
 
 void UpdateBoard(Board b){
 
-	for(int k = 0; k <= BOARD_LENGTH + X; k++){
-		for(int l = 0; l <= BOARD_WIDTH + X; l++){
+	for(int k = 0; k <= BOARD_LENGTH + 1; k++){
+		for(int l = 0; l <= BOARD_WIDTH + 1; l++){
 
 			switch(b.Field[k][l]){
 
@@ -540,9 +540,6 @@ void UpdateBoard(Board b){
 			case T:
 				DrawBlock(l-1, k-1, LCD_COLOR_BLUE2);
 				break;
-
-			case U:
-				DrawBlock(l-1, k-1, LCD_COLOR_BLACK);
 
 			}
 		}
@@ -935,11 +932,11 @@ Board CheckTetris(Board b){
 	}
 
 
-	if(bottomRow < BOARD_LENGTH + X){
+	if(bottomRow != BOARD_LENGTH + X){
 
 		uint8_t numLevels = bottomRow - topRow + X;
 
-		for(int i = bottomRow; i > numLevels; i--){
+		for(int i = bottomRow; i > bottomRow - numLevels; i--){
 			for(int j = X; j <= BOARD_WIDTH; j++){
 
 				b.Field[i][j] = b.Field[i - numLevels][j];

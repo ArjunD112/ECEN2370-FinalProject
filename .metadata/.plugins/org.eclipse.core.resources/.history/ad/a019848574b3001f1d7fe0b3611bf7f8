@@ -935,11 +935,11 @@ Board CheckTetris(Board b){
 	}
 
 
-	if(bottomRow < BOARD_LENGTH + X){
+	if(bottomRow != BOARD_LENGTH + X){
 
 		uint8_t numLevels = bottomRow - topRow + X;
 
-		for(int i = bottomRow; i > numLevels; i--){
+		for(int i = bottomRow; i > bottomRow - numLevels; i--){
 			for(int j = X; j <= BOARD_WIDTH; j++){
 
 				b.Field[i][j] = b.Field[i - numLevels][j];

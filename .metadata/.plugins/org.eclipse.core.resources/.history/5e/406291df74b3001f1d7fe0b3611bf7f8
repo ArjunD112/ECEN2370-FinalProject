@@ -939,7 +939,7 @@ Board CheckTetris(Board b){
 
 		uint8_t numLevels = bottomRow - topRow + X;
 
-		for(int i = bottomRow; i > numLevels; i--){
+		for(int i = bottomRow; i > U; i--){
 			for(int j = X; j <= BOARD_WIDTH; j++){
 
 				b.Field[i][j] = b.Field[i - numLevels][j];
