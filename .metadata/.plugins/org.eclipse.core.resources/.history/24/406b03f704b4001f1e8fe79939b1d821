@@ -54,8 +54,6 @@ int main(void)
 
 		  DrawEndScreen();
 
-		  HAL_NVIC_DisableIRQ(EXTI15_10_IRQn);
-
 		  break;
 		  //end of program. Press the reset button to play again
 	  }

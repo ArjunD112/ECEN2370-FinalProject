@@ -47,15 +47,16 @@ void ApplicationInit(void)
 	#endif // TOUCH_INTERRUPT_ENABLED
 
 	#endif // COMPILE_TOUCH_FUNCTIONS
-}
-
-void LCD_Visual_Demo(void)
-{
 
 
 	DrawStartScreen(board);
 
 
+}
+
+void LCD_Visual_Demo(void)
+{
+	//obsolete
 }
 
 #if COMPILE_TOUCH_FUNCTIONS == 1

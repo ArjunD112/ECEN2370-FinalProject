@@ -10,9 +10,9 @@
 ../Core/Src/Tetris_Logic.c:798:7:InitBoard	192	static
 ../Core/Src/Tetris_Logic.c:820:7:SetTetrominoe	368	static
 ../Core/Src/Tetris_Logic.c:844:6:DrawEndScreen	16	static
-../Core/Src/Tetris_Logic.c:900:6:CheckOverlap	24	static
-../Core/Src/Tetris_Logic.c:920:6:CheckRow	16	static
-../Core/Src/Tetris_Logic.c:935:7:CheckTetris	360	static
-../Core/Src/Tetris_Logic.c:974:12:NewTetrominoe	216	static
-../Core/Src/Tetris_Logic.c:985:6:ReturnEnd	4	static
-../Core/Src/Tetris_Logic.c:992:6:IncTime	4	static
+../Core/Src/Tetris_Logic.c:929:6:CheckOverlap	24	static
+../Core/Src/Tetris_Logic.c:949:6:CheckRow	16	static
+../Core/Src/Tetris_Logic.c:964:7:CheckTetris	360	static
+../Core/Src/Tetris_Logic.c:1003:12:NewTetrominoe	216	static
+../Core/Src/Tetris_Logic.c:1014:6:ReturnEnd	4	static
+../Core/Src/Tetris_Logic.c:1021:6:IncTime	4	static

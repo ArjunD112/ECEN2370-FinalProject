@@ -894,6 +894,35 @@ void DrawEndScreen(){
 	LCD_DisplayChar(172, 150, 'e');
 	LCD_DisplayChar(183, 150, 'c');
 
+
+	LCD_DisplayChar(30, 240, 'P');
+	LCD_DisplayChar(41, 240, 'r');
+	LCD_DisplayChar(49, 240, 'e');
+	LCD_DisplayChar(61, 240, 's');
+	LCD_DisplayChar(72, 240, 's');
+
+	LCD_DisplayChar(97, 240, 'R');
+	LCD_DisplayChar(112, 240, 'S');
+	LCD_DisplayChar(125, 240, 'T');
+
+	LCD_DisplayChar(150, 240, 'B');
+	LCD_DisplayChar(161, 240, 't');
+	LCD_DisplayChar(172, 240, 'n');
+
+	LCD_DisplayChar(192, 240, 'T');
+	LCD_DisplayChar(202, 240, 'o');
+
+	LCD_DisplayChar(75, 270, 'P');
+	LCD_DisplayChar(85, 270, 'l');
+	LCD_DisplayChar(93, 270, 'a');
+	LCD_DisplayChar(103, 270, 'y');
+
+	LCD_DisplayChar(123, 270, 'A');
+	LCD_DisplayChar(137, 270, 'g');
+	LCD_DisplayChar(149, 270, 'a');
+	LCD_DisplayChar(157, 270, 'i');
+	LCD_DisplayChar(165, 270, 'n');
+
 }
 
 
