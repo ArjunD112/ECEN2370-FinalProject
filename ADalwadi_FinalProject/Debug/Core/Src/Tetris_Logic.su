@@ -12,7 +12,7 @@
 ../Core/Src/Tetris_Logic.c:843:6:DrawEndScreen	16	static
 ../Core/Src/Tetris_Logic.c:876:6:CheckOverlap	24	static
 ../Core/Src/Tetris_Logic.c:896:6:CheckRow	16	static
-../Core/Src/Tetris_Logic.c:911:7:CheckTetris	200	static
-../Core/Src/Tetris_Logic.c:961:12:NewTetrominoe	216	static
-../Core/Src/Tetris_Logic.c:972:6:ReturnEnd	4	static
-../Core/Src/Tetris_Logic.c:979:6:IncTime	4	static
+../Core/Src/Tetris_Logic.c:911:7:CheckTetris	360	static
+../Core/Src/Tetris_Logic.c:950:12:NewTetrominoe	216	static
+../Core/Src/Tetris_Logic.c:961:6:ReturnEnd	4	static
+../Core/Src/Tetris_Logic.c:968:6:IncTime	4	static

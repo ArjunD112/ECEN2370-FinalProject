@@ -12,7 +12,7 @@
 ../Core/Src/Tetris_Logic.c:843:6:DrawEndScreen	1
 ../Core/Src/Tetris_Logic.c:876:6:CheckOverlap	5
 ../Core/Src/Tetris_Logic.c:896:6:CheckRow	3
-../Core/Src/Tetris_Logic.c:911:7:CheckTetris	10
-../Core/Src/Tetris_Logic.c:961:12:NewTetrominoe	1
-../Core/Src/Tetris_Logic.c:972:6:ReturnEnd	1
-../Core/Src/Tetris_Logic.c:979:6:IncTime	1
+../Core/Src/Tetris_Logic.c:911:7:CheckTetris	6
+../Core/Src/Tetris_Logic.c:950:12:NewTetrominoe	1
+../Core/Src/Tetris_Logic.c:961:6:ReturnEnd	1
+../Core/Src/Tetris_Logic.c:968:6:IncTime	1

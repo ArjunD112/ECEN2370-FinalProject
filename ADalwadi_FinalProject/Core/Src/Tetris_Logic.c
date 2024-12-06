@@ -910,50 +910,39 @@ bool CheckRow(Board b, int8_t r){
 
 Board CheckTetris(Board b){
 
-	int8_t bottomRow = BOARD_LENGTH + X;
-	int8_t topRow = bottomRow;
-
-	for(int r = BOARD_LENGTH; r > 0; r--){
-
-		if(CheckRow(b, r) && r < bottomRow){
-
-			bottomRow = r;
-
-		}
-
-	}
+	Board bNew = b;
 
 
-	for(int r = bottomRow; r > 0; r--){
+	for(int i = BOARD_LENGTH; i > X; i--){
 
-		if(CheckRow(b, r) && r < topRow){
+		if(CheckRow(bNew, i)){
 
-			topRow = r;
+			for(int m = i; m > X; m--){
+				for(int n = X; n <= BOARD_WIDTH; n++){
 
-		}
+					bNew.Field[m][n] = bNew.Field[m - X][n];
 
-	}
-
-
-	if(bottomRow < BOARD_LENGTH + X){
-
-		uint8_t numLevels = bottomRow - topRow + X;
-
-		for(int i = bottomRow; i > numLevels; i--){
-			for(int j = X; j <= BOARD_WIDTH; j++){
-
-				b.Field[i][j] = b.Field[i - numLevels][j];
-				b.Field[i - numLevels][j] = U;
+				}
 
 			}
+
+
+			for(int k = X; k <= BOARD_WIDTH; k++){
+
+				bNew.Field[X][k] = U;
+
+			}
+
+
+			i++;
+
 		}
 
-
-		UpdateBoard(b);
+		UpdateBoard(bNew);
 
 	}
 
-	return b;
+	return bNew;
 
 }
 

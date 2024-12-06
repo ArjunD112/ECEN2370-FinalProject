@@ -49,7 +49,7 @@ uint32_t RNG_GenRandNum(){
 
 		while(HAL_RNG_GenerateRandomNumber(&hrng, &randNum) != HAL_OK){;}
 
-		rn = (randNum >> SHIFT) + MIN;
+		rn = ((randNum << SHIFT) >> SHIFT) + MIN;
 
 	}
 
