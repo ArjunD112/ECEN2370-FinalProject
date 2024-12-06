@@ -769,34 +769,28 @@ void DrawStartScreen(Board b){
 	LCD_SetTextColor(LCD_COLOR_WHITE);
 	LCD_SetFont(&Font16x24);
 
-	LCD_DisplayChar(80, 100, 'T');
-	LCD_DisplayChar(95, 100, 'E');
-	LCD_DisplayChar(110, 100, 'T');
-	LCD_DisplayChar(125, 100, 'R');
-	LCD_DisplayChar(135, 100, 'I');
-	LCD_DisplayChar(145, 100, 'S');
+	LCD_DisplayChar(80, 110, 'T');
+	LCD_DisplayChar(95, 110, 'E');
+	LCD_DisplayChar(110, 110, 'T');
+	LCD_DisplayChar(125, 110, 'R');
+	LCD_DisplayChar(135, 110, 'I');
+	LCD_DisplayChar(145, 110, 'S');
 
 
 	LCD_SetTextColor(LCD_COLOR_WHITE);
 	LCD_SetFont(&Font12x12);
 
-	LCD_DisplayChar(92, 140, 'P');
-	LCD_DisplayChar(100, 140, 'r');
-	LCD_DisplayChar(105, 140, 'e');
-	LCD_DisplayChar(113, 140, 's');
-	LCD_DisplayChar(120, 140, 's');
+	LCD_DisplayChar(85, 145, 'T');
+	LCD_DisplayChar(92, 145, 'a');
+	LCD_DisplayChar(99, 145, 'p');
 
-	LCD_DisplayChar(130, 140, 'B');
-	LCD_DisplayChar(141, 140, 't');
-	LCD_DisplayChar(147, 140, 'n');
+	LCD_DisplayChar(109, 145, 'T');
+	LCD_DisplayChar(116, 145, 'o');
 
-	LCD_DisplayChar(100, 153, 'T');
-	LCD_DisplayChar(107, 153, 'o');
-
-	LCD_DisplayChar(117, 153, 'P');
-	LCD_DisplayChar(126, 153, 'l');
-	LCD_DisplayChar(130, 153, 'a');
-	LCD_DisplayChar(138, 153, 'y');
+	LCD_DisplayChar(126, 145, 'P');
+	LCD_DisplayChar(134, 145, 'l');
+	LCD_DisplayChar(137, 145, 'a');
+	LCD_DisplayChar(144, 145, 'y');
 
 }
 

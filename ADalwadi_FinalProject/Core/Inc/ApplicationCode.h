@@ -10,7 +10,6 @@
 #include "Tetris_Logic.h"
 #include "Button_Driver.h"
 #include "Timer_Driver.h"
-#include "RNG_Driver.h"
 
 #include <stdio.h>
 

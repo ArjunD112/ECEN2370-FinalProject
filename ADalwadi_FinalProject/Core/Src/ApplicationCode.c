@@ -61,8 +61,6 @@ void LCD_Visual_Demo(void)
 #if COMPILE_TOUCH_FUNCTIONS == 1
 void LCD_Touch_Polling_Demo(void)
 {
-	LCD_Clear(0,LCD_COLOR_GREEN);
-	while (1) {
 		/* If touch pressed */
 		if (returnTouchStateAndLocation(&StaticTouchData) == STMPE811_State_Pressed) {
 			/* Touch valid */
@@ -73,7 +71,7 @@ void LCD_Touch_Polling_Demo(void)
 			printf("Not Pressed\n\n");
 			LCD_Clear(0, LCD_COLOR_GREEN);
 		}
-	}
+
 }
 
 
@@ -136,13 +134,27 @@ void EXTI15_10_IRQHandler()
 	{
 		DetermineTouchPosition(&StaticTouchData);
 
-		if(StaticTouchData.x < 120){
-			tetrominoe = ShiftTetrominoe(tetrominoe, board, LEFT);
-		}
-		else{
-			tetrominoe = ShiftTetrominoe(tetrominoe, board, RIGHT);
+
+		if(!started){
+			board = InitBoard();
+
+			tetrominoe = NewTetrominoe(board);
+
+			StartTimer();
+
+			started = true;
 		}
 
+		else{
+
+			if(StaticTouchData.x < 120){
+				tetrominoe = ShiftTetrominoe(tetrominoe, board, LEFT);
+			}
+			else{
+				tetrominoe = ShiftTetrominoe(tetrominoe, board, RIGHT);
+			}
+
+		}
 
 	}
 
@@ -172,18 +184,7 @@ void EXTI0_IRQHandler(){
 	HAL_NVIC_DisableIRQ(EXTI0_IRQn);
 
 
-	if(!started){
-		board = InitBoard();
-
-		tetrominoe = NewTetrominoe(board);
-
-		StartTimer();
-
-		started = true;
-	}
-	else{
-		tetrominoe = RotateTetrominoe(tetrominoe, board);
-	}
+	tetrominoe = RotateTetrominoe(tetrominoe, board);
 
 
 	HAL_EXTI_ClearPending(EXTI_GPIOA, EXTI_TRIGGER_RISING);
