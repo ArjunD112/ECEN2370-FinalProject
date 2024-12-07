@@ -12,7 +12,7 @@
 
 
 
-#define PSC_VAL 14399
+#define PSC_VAL 7199
 #define ARR_VAL 9999
 
 

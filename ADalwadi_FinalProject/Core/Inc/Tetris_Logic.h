@@ -52,7 +52,7 @@
 #define LCD_X_MIN 6
 #define LCD_Y_MIN 40
 
-#define TIME_MUL 2
+#define TIME_MUL 1
 
 
 
