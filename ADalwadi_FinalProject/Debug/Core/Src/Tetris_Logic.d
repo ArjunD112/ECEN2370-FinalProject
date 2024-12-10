@@ -34,7 +34,8 @@ Core/Src/Tetris_Logic.o: ../Core/Src/Tetris_Logic.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Core/Inc/ili9341.h ../Core/Inc/fonts.h ../Core/Inc/stmpe811.h \
- ../Core/Inc/RNG_Driver.h ../Core/Inc/Timer_Driver.h
+ ../Core/Inc/RNG_Driver.h ../Core/Inc/Timer_Driver.h \
+ ../Core/Inc/Button_Driver.h
 ../Core/Inc/Tetris_Logic.h:
 ../Core/Inc/LCD_Driver.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -75,3 +76,4 @@ Core/Src/Tetris_Logic.o: ../Core/Src/Tetris_Logic.c \
 ../Core/Inc/stmpe811.h:
 ../Core/Inc/RNG_Driver.h:
 ../Core/Inc/Timer_Driver.h:
+../Core/Inc/Button_Driver.h:

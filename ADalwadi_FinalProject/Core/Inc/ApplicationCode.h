@@ -5,9 +5,7 @@
  *      Author: Xavion
  */
 
-#include "stm32f4xx_hal.h"
 #include "Tetris_Logic.h"
-#include "Button_Driver.h"
 
 #include <stdio.h>
 
