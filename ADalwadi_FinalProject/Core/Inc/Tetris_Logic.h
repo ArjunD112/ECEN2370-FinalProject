@@ -75,8 +75,6 @@ typedef struct {
 
 	volatile int8_t YPosition;
 
-	volatile uint8_t Set;
-
 } Tetrominoe ;
 
 

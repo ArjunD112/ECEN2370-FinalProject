@@ -193,7 +193,6 @@ Tetrominoe BuildTetrominoe(uint8_t c, Board b){
 
 	tetrominoe.XPosition = START_POSITION_X;
 	tetrominoe.YPosition = START_POSITION_Y;
-	tetrominoe.Set = U;
 
 
 	if(!CheckOverlap(tetrominoe, b)){
@@ -235,7 +234,6 @@ Tetrominoe RotateTetrominoe(Tetrominoe oldTetrominoe, Board b){
 	newTetrominoe.Height = oldTetrominoe.Width;
 	newTetrominoe.XPosition = oldTetrominoe.XPosition;
 	newTetrominoe.YPosition = oldTetrominoe.YPosition;
-	newTetrominoe.Set = oldTetrominoe.Set;
 
 
 	if(oldTetrominoe.XPosition + oldTetrominoe.Height > BOARD_W_MAX){
@@ -366,7 +364,6 @@ Tetrominoe ShiftTetrominoe(Tetrominoe oldTetrominoe, Board b, uint8_t dir){
 	newTetrominoe.Height = oldTetrominoe.Height;
 	newTetrominoe.XPosition = oldTetrominoe.XPosition;
 	newTetrominoe.YPosition = oldTetrominoe.YPosition;
-	newTetrominoe.Set = oldTetrominoe.Set;
 
 
 	switch(dir){
@@ -492,7 +489,6 @@ void DrawBoard(){
 	for(uint16_t j = LCD_PIXEL_HEIGHT; j >= LCD_PIXEL_HEIGHT - BOARD_MARGIN; j--){
 
 		LCD_Draw_Horizontal_Line(U, j, LCD_PIXEL_WIDTH, LCD_COLOR_WHITE);
-//		LCD_Draw_Horizontal_Line(U, j - LCD_PIXEL_HEIGHT + MIN_GRID_Y + X, LCD_PIXEL_WIDTH, LCD_COLOR_WHITE);
 
 	}
 
